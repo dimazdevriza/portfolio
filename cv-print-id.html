@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>CV Dimaz Devriza - Web Developer & Network Associate</title>
+  <style>
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    @page {
+      size: A4 portrait;
+      margin: 9mm 14mm 9mm 14mm;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+      font-size: 9pt;
+      line-height: 1.35;
+      color: #000000;
+      background: #ffffff;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* Header */
+    .header {
+      text-align: center;
+      margin-bottom: 8px;
+      border-bottom: 1.5px solid #000000;
+      padding-bottom: 6px;
+    }
+    .name {
+      font-size: 19pt;
+      font-weight: 800;
+      letter-spacing: -0.2px;
+      color: #000000;
+      text-transform: uppercase;
+      line-height: 1.1;
+      margin-bottom: 2px;
+    }
+    .tagline {
+      font-size: 10pt;
+      font-weight: 700;
+      color: #000000;
+      margin-bottom: 4px;
+    }
+    .contacts {
+      font-size: 8.3pt;
+      color: #000000;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 3px 10px;
+    }
+    .contacts a {
+      color: #000000;
+      text-decoration: none;
+    }
+    .contacts span.separator {
+      color: #666666;
+    }
+
+    /* Sections */
+    .section {
+      margin-top: 8px;
+    }
+    .section-title {
+      font-size: 9.3pt;
+      font-weight: 800;
+      color: #000000;
+      text-transform: uppercase;
+      letter-spacing: 0.6px;
+      border-bottom: 1px solid #000000;
+      padding-bottom: 1.5px;
+      margin-bottom: 5px;
+    }
+
+    /* Summary */
+    .summary-text {
+      font-size: 8.6pt;
+      color: #000000;
+      line-height: 1.36;
+      text-align: justify;
+    }
+
+    /* Education */
+    .edu-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      margin-bottom: 1px;
+    }
+    .edu-title {
+      font-size: 9pt;
+      font-weight: 800;
+      color: #000000;
+    }
+    .edu-date {
+      font-size: 8.3pt;
+      font-weight: 600;
+      color: #000000;
+    }
+    .edu-degree {
+      display: flex;
+      justify-content: space-between;
+      font-size: 8.5pt;
+      color: #000000;
+      margin-bottom: 1px;
+    }
+    .edu-gpa {
+      font-weight: 700;
+      color: #000000;
+    }
+    .edu-focus {
+      font-size: 8.2pt;
+      color: #222222;
+    }
+
+    /* Skills */
+    .skills-grid {
+      display: flex;
+      flex-direction: column;
+      gap: 3px;
+      font-size: 8.5pt;
+    }
+    .skill-row {
+      display: flex;
+      line-height: 1.32;
+    }
+    .skill-category {
+      font-weight: 700;
+      color: #000000;
+      min-width: 165px;
+      flex-shrink: 0;
+    }
+    .skill-list {
+      color: #111111;
+    }
+
+    /* Experience */
+    .item {
+      margin-bottom: 6px;
+    }
+    .item:last-child {
+      margin-bottom: 0;
+    }
+    .item-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      margin-bottom: 1px;
+    }
+    .item-company {
+      font-size: 9pt;
+      font-weight: 800;
+      color: #000000;
+    }
+    .item-location {
+      font-size: 8pt;
+      color: #333333;
+      font-weight: 500;
+    }
+    .item-date {
+      font-size: 8.3pt;
+      font-weight: 600;
+      color: #000000;
+    }
+    .item-role {
+      font-size: 8.4pt;
+      font-weight: 700;
+      color: #222222;
+      font-style: italic;
+      margin-bottom: 2px;
+    }
+
+    /* Bullets */
+    ul.item-bullets {
+      list-style-type: disc;
+      padding-left: 14px;
+      margin: 0;
+    }
+    ul.item-bullets li {
+      font-size: 8.4pt;
+      color: #111111;
+      line-height: 1.33;
+      margin-bottom: 2px;
+      text-align: justify;
+    }
+    ul.item-bullets li:last-child {
+      margin-bottom: 0;
+    }
+    ul.item-bullets strong {
+      color: #000000;
+      font-weight: 700;
+    }
+
+    /* Certifications */
+    .cert-list {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 3px 12px;
+      font-size: 8.3pt;
+    }
+    .cert-item {
+      line-height: 1.28;
+    }
+    .cert-title {
+      font-weight: 700;
+      color: #000000;
+    }
+    .cert-issuer {
+      color: #333333;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header class="header">
+    <h1 class="name">Dimaz Devriza</h1>
+    <div class="tagline">Full-Stack Web Developer & Network Associate</div>
+    <div class="contacts">
+      <span>Padang, Sumatera Barat, Indonesia</span>
+      <span class="separator">•</span>
+      <span>089660807317</span>
+      <span class="separator">•</span>
+      <span>dimaz.corn@gmail.com</span>
+      <span class="separator">•</span>
+      <span>linkedin.com/in/dimazdevriza</span>
+      <span class="separator">•</span>
+      <span>github.com/dimazdevriza</span>
+    </div>
+  </header>
+
+  <!-- RINGKASAN PROFESIONAL -->
+  <section class="section">
+    <h2 class="section-title">Ringkasan Profesional</h2>
+    <p class="summary-text">
+      Lulusan S1 Teknologi Informasi (IPK 3,69) dari Universitas PGRI Sumatera Barat dan Web Developer yang berfokus pada ekosistem Laravel (Laravel 13), Livewire, dan MySQL. Berpengalaman membangun dan men-deploy aplikasi web operasional di lingkungan nyata, termasuk Sistem Logistik & Gudang untuk perusahaan pengembang perumahan dan Learning Management System (LMS) aktif di SMA Negeri 15 Padang. Terbiasa mengelola database relasional, manajemen hak akses pengguna, alur kerja Git, serta deployment server hosting cPanel. Memiliki sertifikasi MikroTik MTCNA, Microsoft Azure AI Fundamentals, dan kemampuan bahasa Inggris dengan skor Altissia B1.
+    </p>
+  </section>
+
+  <!-- PENDIDIKAN -->
+  <section class="section">
+    <h2 class="section-title">Pendidikan</h2>
+    <div class="edu-row">
+      <span class="edu-title">Universitas PGRI Sumatera Barat (UPGRISBA) — <span style="font-weight: 500; font-size: 8.2pt; color: #333333;">Padang, Sumatera Barat</span></span>
+      <span class="edu-date">2022 – 2026</span>
+    </div>
+    <div class="edu-degree">
+      <span>Sarjana Komputer (S.Kom) - S1 Teknologi Informasi</span>
+      <span class="edu-gpa">IPK: 3,69 / 4,00</span>
+    </div>
+    <div class="edu-focus">
+      Fokus Studi: Rekayasa Perangkat Lunak, Basis Data Relasional, Jaringan Komputer, Dasar AI Cloud
+    </div>
+  </section>
+
+  <!-- KEAHLIAN TEKNIS -->
+  <section class="section">
+    <h2 class="section-title">Keahlian Teknis</h2>
+    <div class="skills-grid">
+      <div class="skill-row">
+        <span class="skill-category">Bahasa Pemrograman:</span>
+        <span class="skill-list">PHP, JavaScript, HTML5, CSS3, SQL</span>
+      </div>
+      <div class="skill-row">
+        <span class="skill-category">Framework & Library:</span>
+        <span class="skill-list">Laravel 13, Livewire, Alpine.js, Tailwind CSS, Bootstrap</span>
+      </div>
+      <div class="skill-row">
+        <span class="skill-category">Database & Arsitektur:</span>
+        <span class="skill-list">MySQL, Relational Database, Normalisasi Basis Data, Arsitektur MVC, REST API</span>
+      </div>
+      <div class="skill-row">
+        <span class="skill-category">Jaringan & Server:</span>
+        <span class="skill-list">MikroTik RouterOS (MTCNA), Routing, TCP/IP, Git, GitHub, Deployment Hosting (Rumahweb/cPanel)</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- PENGALAMAN REKAYASA PERANGKAT LUNAK -->
+  <section class="section">
+    <h2 class="section-title">Pengalaman Kerja & Proyek Rekayasa</h2>
+    
+    <!-- D'Royal Village -->
+    <div class="item">
+      <div class="item-header">
+        <span class="item-company">D'Royal Village (Pengembang Perumahan) <span class="item-location">— Padang, Indonesia</span></span>
+        <span class="item-date">Januari 2026 – Oktober 2026</span>
+      </div>
+      <div class="item-role">Web Developer (Proyek Klien)</div>
+      <ul class="item-bullets">
+        <li>Merancang dan membangun <strong>Sistem Informasi Logistik</strong> berbasis web menggunakan Laravel 13, Livewire, dan MySQL untuk menggantikan pencatatan operasional manual dan spreadsheet Excel.</li>
+        <li>Mengembangkan modul <strong>multi-gudang</strong> untuk mengelola data stok masuk, stok keluar, serta pencatatan mutasi material antar lokasi proyek secara terpusat.</li>
+        <li>Mengimplementasikan fitur <strong>alokasi biaya material ke unit rumah</strong> dan peminjaman alat kerja lapangan guna memudahkan pemantauan penggunaan anggaran.</li>
+        <li>Menerapkan <strong>manajemen hak akses multi-peran</strong> (Admin, Logistik, Pengawas Lapangan, Keuangan) serta fitur ekspor laporan ke format Excel dan PDF untuk kebutuhan rekap data manajemen.</li>
+      </ul>
+    </div>
+
+    <!-- SMA Negeri 15 Padang -->
+    <div class="item">
+      <div class="item-header">
+        <span class="item-company">SMA Negeri 15 Padang <span class="item-location">— Padang, Indonesia</span></span>
+        <span class="item-date">Maret 2026 – Juli 2026</span>
+      </div>
+      <div class="item-role">Web Developer</div>
+      <ul class="item-bullets">
+        <li>Bekerja bersama satu rekan pengembang merancang dan membangun platform <strong>Learning Management System (LMS)</strong> berbasis Laravel dan MySQL yang digunakan secara aktif oleh pihak sekolah.</li>
+        <li>Mengembangkan modul distribusi materi pembelajaran digital, pengumpulan tugas siswa dengan validasi format berkas, serta rekapitulasi nilai dan presensi.</li>
+        <li>Mengelola kolaborasi kode menggunakan <strong>Git</strong> dan melakukan konfigurasi serta deployment sistem secara langsung ke hosting Rumahweb.</li>
+      </ul>
+    </div>
+
+    <!-- LLDIKTI Wilayah X -->
+    <div class="item">
+      <div class="item-header">
+        <span class="item-company">LLDIKTI Wilayah X (Kemendikbudristek) <span class="item-location">— Padang, Indonesia</span></span>
+        <span class="item-date">Juni 2025 – Oktober 2025</span>
+      </div>
+      <div class="item-role">Web Developer Intern</div>
+      <ul class="item-bullets">
+        <li>Melaksanakan magang dengan tugas memelihara, memperbaiki bug, dan mengembangkan fitur pada <strong>Sistem Informasi Pembookingan Laboratorium (SiLAB)</strong> berbasis PHP dan MySQL.</li>
+        <li>Menyempurnakan alur validasi jadwal reservasi fasilitas laboratorium guna mencegah terjadinya bentrokan jadwal antar perguruan tinggi pemohon.</li>
+        <li>Membangun modul unggah dokumen persyaratan digital (PDF) serta alur verifikasi dan persetujuan pemesanan oleh admin.</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- SERTIFIKASI & PELATIHAN -->
+  <section class="section">
+    <h2 class="section-title">Sertifikasi & Lisensi Resmi</h2>
+    <div class="cert-list">
+      <div class="cert-item">
+        <span class="cert-title">• MikroTik Certified Network Associate (MTCNA)</span><br>
+        <span class="cert-issuer">MikroTik — Lisensi Internasional (Oktober 2026)</span>
+      </div>
+      <div class="cert-item">
+        <span class="cert-title">• Microsoft Certified: Azure AI Fundamentals</span><br>
+        <span class="cert-issuer">Microsoft — Kredensial AI Cloud (Juni 2026)</span>
+      </div>
+      <div class="cert-item">
+        <span class="cert-title">• Altissia CEFR Language Assessment: Skor B1</span><br>
+        <span class="cert-issuer">Altissia — Kemampuan Bahasa Inggris (Oktober 2026)</span>
+      </div>
+      <div class="cert-item">
+        <span class="cert-title">• Sertifikasi Pelatihan Web Developer</span><br>
+        <span class="cert-issuer">Universitas PGRI Sumatera Barat (Oktober 2026)</span>
+      </div>
+    </div>
+  </section>
+
+</body>
+</html>
