@@ -83,20 +83,46 @@
 }
 
 .light .apple-glass-island {
-  background: rgba(255, 255, 255, 0.92) !important;
-  border-color: rgba(0, 0, 0, 0.09) !important;
+  background: rgba(255, 255, 255, 0.94) !important;
+  border-color: rgba(15, 23, 42, 0.08) !important;
   box-shadow: 
-    0 15px 40px -10px rgba(0, 0, 0, 0.08),
-    inset 0 1px 1px 0 rgba(255, 255, 255, 0.9) !important;
+    0 12px 36px -10px rgba(15, 23, 42, 0.08),
+    0 1px 3px rgba(15, 23, 42, 0.04) !important;
 }
 
-.light .apple-glass-island a,
-.light .apple-glass-island span {
+.light .apple-glass-island nav a {
+  color: #475569 !important;
+}
+
+.light .apple-glass-island nav a:hover {
+  color: #0F172A !important;
+  background-color: #F1F5F9 !important;
+}
+
+.light .apple-glass-island a[aria-label*="Dimaz"] span {
   color: #0F172A !important;
 }
 
-.light .apple-glass-island a:hover {
-  background-color: rgba(0, 0, 0, 0.05) !important;
+.light .apple-glass-island a[href*="drive"] {
+  background-color: #0F172A !important;
+  color: #FFFFFF !important;
+  box-shadow: 0 4px 12px rgba(15, 23, 42, 0.15) !important;
+}
+
+.light .apple-glass-island a[href*="drive"] span {
+  color: #FFFFFF !important;
+}
+
+.light .apple-glass-island a[href*="drive"] svg {
+  color: #FFFFFF !important;
+}
+
+.light .apple-glass-island a[href*="drive"] div {
+  background-color: rgba(255, 255, 255, 0.2) !important;
+}
+
+.light #theme-sun-icon {
+  color: #D97706 !important;
 }
 
 /* Double-Bezel Architecture (Machined hardware look) */
@@ -124,88 +150,259 @@
 }
 
 .light .bezel-outer {
-  background: rgba(0, 0, 0, 0.02) !important;
-  border-color: rgba(0, 0, 0, 0.08) !important;
-  box-shadow: 0 20px 40px -15px rgba(0, 0, 0, 0.06) !important;
+  background: #FFFFFF !important;
+  border: 1px solid #E2E8F0 !important;
+  box-shadow: 
+    0 1px 3px 0 rgba(15, 23, 42, 0.04),
+    0 10px 25px -5px rgba(15, 23, 42, 0.05),
+    0 20px 48px -12px rgba(15, 23, 42, 0.03) !important;
+  border-radius: 1.5rem !important;
+  padding: 0.375rem !important;
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.3s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.3s ease !important;
 }
 
 .light .bezel-outer:hover {
-  border-color: rgba(2, 132, 199, 0.35) !important;
-  box-shadow: 0 25px 50px -15px rgba(0, 0, 0, 0.1) !important;
+  border-color: #CBD5E1 !important;
+  box-shadow: 
+    0 2px 6px 0 rgba(15, 23, 42, 0.06),
+    0 16px 32px -6px rgba(15, 23, 42, 0.08),
+    0 32px 64px -12px rgba(15, 23, 42, 0.05) !important;
+  transform: translateY(-2px);
 }
 
 .light .bezel-inner {
   background: #FFFFFF !important;
-  border-color: rgba(0, 0, 0, 0.06) !important;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04) !important;
+  border: 1px solid rgba(226, 232, 240, 0.7) !important;
+  border-radius: calc(1.5rem - 0.375rem) !important;
+  box-shadow: inset 0 1px 1px rgba(255, 255, 255, 0.9) !important;
 }
 
-/* Comprehensive Light Mode Contrast Enforcement (R-25, R-34) */
+/* ==========================================================================
+   HIGH-END LIGHT MODE DESIGN SYSTEM (Apple & Linear Grade Aesthetics)
+   ========================================================================== */
+
+/* 1. Base Typography & Text Contrast */
 html.light h1,
 html.light h2,
 html.light h3,
 html.light h4,
 html.light strong,
-html.light .text-white {
-  color: #0F172A !important;
+html.light .text-white,
+html.light .text-slate-100,
+html.light .text-slate-50 {
+  color: #0F172A !important; /* Deepest slate 900 */
 }
 
 html.light p,
 html.light .text-slate-200,
 html.light .text-slate-300 {
-  color: #334155 !important; /* Slate 700 - contrast > 8.5:1 */
+  color: #334155 !important; /* Slate 700 - WCAG AAA > 8.5:1 */
 }
 
 html.light .text-slate-400 {
-  color: #475569 !important; /* Slate 600 - contrast > 5.5:1 */
+  color: #475569 !important; /* Slate 600 - WCAG AAA > 5.5:1 */
 }
 
+html.light .text-slate-500 {
+  color: #64748B !important; /* Slate 500 */
+}
+
+/* 2. Skills Matrix (Crisp, High-Contrast Grid with Jewel Badges) */
+html.light .skill-item-card {
+  background-color: #F8FAFC !important;
+  border: 1px solid #E2E8F0 !important;
+  box-shadow: 0 1px 2px 0 rgba(15, 23, 42, 0.03) !important;
+  transition: all 0.25s ease !important;
+}
+
+html.light .skill-item-card:hover {
+  background-color: #FFFFFF !important;
+  border-color: #38BDF8 !important;
+  box-shadow: 0 6px 16px -2px rgba(14, 165, 233, 0.12) !important;
+  transform: translateY(-1.5px);
+}
+
+html.light .skill-item-title {
+  color: #0F172A !important;
+  font-weight: 700 !important;
+}
+
+html.light .skill-item-badge {
+  background-color: #F0F9FF !important;
+  color: #0284C7 !important;
+  border: 1px solid #BAE6FD !important;
+  padding: 2px 8px !important;
+  border-radius: 6px !important;
+  font-weight: 600 !important;
+}
+
+html.light .skill-item-note {
+  color: #475569 !important;
+  font-size: 12px !important;
+  line-height: 1.5 !important;
+}
+
+/* 3. Semantic Badge System for Light Mode (Jewel Tones on Soft Tint) */
+/* Amber / Orange Badges */
+html.light .bg-amber-500\/10,
+html.light .bg-amber-500\/15 {
+  background-color: #FEF3C7 !important;
+  border-color: #FDE68A !important;
+}
+html.light .text-amber-300,
+html.light .text-amber-400 {
+  color: #92400E !important; /* High contrast amber-800 */
+}
+
+/* Sky / Blue Badges */
+html.light .bg-sky-500\/10,
+html.light .bg-sky-500\/15,
+html.light .bg-blue-500\/10,
+html.light .bg-blue-500\/15 {
+  background-color: #F0F9FF !important;
+  border-color: #BAE6FD !important;
+}
+html.light .text-sky-300,
+html.light .text-sky-400,
+html.light .text-blue-300,
+html.light .text-blue-400 {
+  color: #0369A1 !important; /* Sky 700 */
+}
+
+/* Emerald / Green Badges */
+html.light .bg-emerald-500\/10,
+html.light .bg-emerald-500\/15 {
+  background-color: #ECFDF5 !important;
+  border-color: #A7F3D0 !important;
+}
+html.light .text-emerald-300,
+html.light .text-emerald-400 {
+  color: #065F46 !important; /* Emerald 800 */
+}
+
+/* Purple / Violet Badges */
+html.light .bg-purple-500\/10,
+html.light .bg-purple-500\/15,
+html.light .bg-indigo-500\/10,
+html.light .bg-indigo-500\/15 {
+  background-color: #F5F3FF !important;
+  border-color: #DDD6FE !important;
+}
+html.light .text-purple-300,
+html.light .text-purple-400,
+html.light .text-indigo-300,
+html.light .text-indigo-400 {
+  color: #6D28D9 !important; /* Purple 700 */
+}
+
+/* Neutral Tags (Tech Chips & Metadata) */
 html.light .bg-white\/\[0\.02\],
 html.light .bg-white\/\[0\.03\],
 html.light .bg-white\/\[0\.04\],
-html.light .bg-white\/\[0\.05\] {
+html.light .bg-white\/\[0\.05\],
+html.light .bg-white\/\[0\.06\] {
   background-color: #F1F5F9 !important;
-  border-color: #E2E8F0 !important;
+  border-color: #CBD5E1 !important;
 }
 
 html.light .border-white\/\[0\.06\],
 html.light .border-white\/\[0\.08\],
-html.light .border-white\/\[0\.1\] {
+html.light .border-white\/\[0\.1\],
+html.light .border-white\/10,
+html.light .border-white\/15 {
   border-color: #E2E8F0 !important;
 }
 
+/* 4. Sections Backgrounds & Separators */
+html.light #certifications,
 html.light .bg-slate-950\/40,
 html.light .bg-slate-950\/60,
 html.light .bg-slate-950\/70,
 html.light .bg-slate-950\/85 {
   background-color: #F8FAFC !important;
-}
-
-html.light #tech-marquee-container {
-  background-color: #F1F5F9 !important;
   border-color: #E2E8F0 !important;
 }
 
-html.light #tech-marquee-track span {
+/* 5. Navigation Header (Apple Glass Island) */
+html.light .apple-glass-island {
+  background: rgba(255, 255, 255, 0.92) !important;
+  border: 1px solid rgba(15, 23, 42, 0.08) !important;
+  box-shadow: 
+    0 12px 36px -10px rgba(15, 23, 42, 0.08),
+    0 1px 3px rgba(15, 23, 42, 0.04) !important;
+}
+
+html.light .apple-glass-island a {
   color: #334155 !important;
 }
 
-/* Light mode specific badge, button, and card overrides */
+html.light .apple-glass-island a:hover {
+  color: #0F172A !important;
+  background-color: #F1F5F9 !important;
+}
+
+html.light #nav-cv-btn,
+html.light .apple-glass-island a[href*="drive"] {
+  background-color: #0F172A !important;
+  color: #FFFFFF !important;
+  box-shadow: 0 4px 12px rgba(15, 23, 42, 0.15) !important;
+}
+
+html.light #nav-cv-btn svg,
+html.light .apple-glass-island a[href*="drive"] svg {
+  color: #FFFFFF !important;
+}
+
+html.light #theme-toggle-btn {
+  background-color: #F1F5F9 !important;
+  border: 1px solid #CBD5E1 !important;
+  color: #0F172A !important;
+}
+
+/* 6. Hero Section Elements */
 html.light #hero-status {
   background-color: #FFFFFF !important;
-  border-color: #E2E8F0 !important;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05) !important;
+  border: 1px solid #CBD5E1 !important;
+  box-shadow: 0 4px 12px rgba(15, 23, 42, 0.04) !important;
 }
 
 html.light #hero-status span {
   color: #1E293B !important;
 }
 
+html.light #hero-cta a:first-child {
+  background-color: #0F172A !important;
+  color: #FFFFFF !important;
+  box-shadow: 0 10px 25px -5px rgba(15, 23, 42, 0.25) !important;
+}
+
+html.light #hero-cta a:first-child span,
+html.light #hero-cta a:first-child svg {
+  color: #FFFFFF !important;
+}
+
+html.light #hero-cta a:last-child {
+  background-color: #FFFFFF !important;
+  border: 1px solid #CBD5E1 !important;
+  color: #0F172A !important;
+  box-shadow: 0 2px 8px rgba(15, 23, 42, 0.04) !important;
+}
+
+html.light #hero-cta a:last-child:hover {
+  background-color: #F8FAFC !important;
+  border-color: #0284C7 !important;
+}
+
+html.light #hero-cta a:last-child span,
+html.light #hero-cta a:last-child svg {
+  color: #0F172A !important;
+}
+
 html.light #card-badge-status,
 html.light #card-badge-metric {
   background-color: #FFFFFF !important;
-  border-color: #E2E8F0 !important;
-  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.08) !important;
+  border: 1px solid #CBD5E1 !important;
+  box-shadow: 0 10px 25px -5px rgba(15, 23, 42, 0.08) !important;
 }
 
 html.light #card-badge-status span {
@@ -220,24 +417,242 @@ html.light #card-badge-metric .text-slate-400 {
   color: #475569 !important;
 }
 
-html.light #hero-cta a:last-child {
+/* 7. Tech Marquee */
+html.light #tech-marquee-container {
   background-color: #FFFFFF !important;
   border-color: #E2E8F0 !important;
+  box-shadow: 0 1px 3px rgba(15, 23, 42, 0.03) !important;
+}
+
+html.light .marquee-fade-left {
+  background: linear-gradient(90deg, #FFFFFF 0%, transparent 100%) !important;
+}
+
+html.light .marquee-fade-right {
+  background: linear-gradient(270deg, #FFFFFF 0%, transparent 100%) !important;
+}
+
+html.light #tech-marquee-track span {
+  color: #334155 !important;
+  font-weight: 600 !important;
+}
+
+html.light #marquee-pause-btn {
+  background-color: #F1F5F9 !important;
+  border-color: #CBD5E1 !important;
   color: #0F172A !important;
 }
 
-html.light #hero-cta a:last-child span {
+/* 8. Case Studies & Interactive Architecture Window */
+html.light #projects .overflow-hidden.rounded-2xl,
+html.light .arch-window-shell {
+  background-color: #F8FAFC !important;
+  border: 1px solid #CBD5E1 !important;
+  box-shadow: 0 4px 16px -4px rgba(15, 23, 42, 0.05) !important;
+}
+
+html.light .arch-window-titlebar {
+  background-color: #F1F5F9 !important;
+  border-bottom: 1px solid #E2E8F0 !important;
+}
+
+html.light .arch-tabs-pill,
+html.light .bg-black\/40 {
+  background-color: #E2E8F0 !important;
+  border: 1px solid #CBD5E1 !important;
+}
+
+html.light .arch-tab-btn {
+  color: #475569 !important;
+  background-color: transparent !important;
+}
+
+html.light .arch-tab-btn.active {
+  background-color: #FFFFFF !important;
+  color: #0F172A !important;
+  box-shadow: 0 1px 3px rgba(15, 23, 42, 0.1) !important;
+}
+
+html.light #projects .p-5.rounded-2xl {
+  background-color: #F8FAFC !important;
+  border: 1px solid #E2E8F0 !important;
+  transition: all 0.25s ease !important;
+}
+
+html.light #projects .p-5.rounded-2xl:hover {
+  background-color: #FFFFFF !important;
+  border-color: #CBD5E1 !important;
+  box-shadow: 0 6px 16px -2px rgba(15, 23, 42, 0.05) !important;
+}
+
+html.light #projects .p-5.rounded-2xl h4 {
   color: #0F172A !important;
 }
 
+html.light #projects .p-5.rounded-2xl p {
+  color: #475569 !important;
+}
+
+html.light #tab-content-flow .p-4.rounded-xl {
+  background-color: #FFFFFF !important;
+  border: 1px solid #CBD5E1 !important;
+}
+
+html.light #tab-content-flow .p-4.rounded-xl span.font-bold {
+  color: #0F172A !important;
+}
+
+html.light #tab-content-flow .bg-sky-500\/\[0\.08\] {
+  background-color: #EFF6FF !important;
+  border-color: #93C5FD !important;
+}
+
+html.light #tab-content-flow .bg-sky-500\/\[0\.08\] code {
+  color: #1D4ED8 !important;
+}
+
+html.light #tab-content-flow .bg-emerald-500\/\[0\.08\] {
+  background-color: #ECFDF5 !important;
+  border-color: #86EFAC !important;
+}
+
+html.light #tab-content-flow .bg-emerald-500\/\[0\.08\] span.font-bold {
+  color: #065F46 !important;
+}
+
+/* Feature Card Icon Badges */
+html.light .bg-sky-500\/10 {
+  background-color: #F0F9FF !important;
+  border-color: #BAE6FD !important;
+}
+html.light .text-sky-400 {
+  color: #0284C7 !important;
+}
+
+html.light .bg-blue-500\/10 {
+  background-color: #EFF6FF !important;
+  border-color: #BFDBFE !important;
+}
+html.light .text-blue-400 {
+  color: #1D4ED8 !important;
+}
+
+html.light .bg-indigo-500\/10 {
+  background-color: #EEF2FF !important;
+  border-color: #C7D2FE !important;
+}
+html.light .text-indigo-400 {
+  color: #4338CA !important;
+}
+
+html.light .bg-purple-500\/10 {
+  background-color: #FAF5FF !important;
+  border-color: #E9D5FF !important;
+}
+html.light .text-purple-400 {
+  color: #7E22CE !important;
+}
+
+/* Concurrency Comparison Boxes */
+html.light .bg-rose-500\/10 {
+  background-color: #FFF1F2 !important;
+  border-color: #FECDD3 !important;
+}
+html.light .text-rose-300,
+html.light .text-rose-400 {
+  color: #9F1239 !important;
+}
+
+/* 9. Experience Timeline in Light Mode */
+html.light #experience .border-l {
+  border-color: #CBD5E1 !important;
+}
+
+html.light #experience .rounded-full.border-2 {
+  background-color: #FFFFFF !important;
+  border-color: #0284C7 !important;
+  box-shadow: 0 0 0 4px rgba(2, 132, 199, 0.18) !important;
+}
+
+html.light #experience span.text-sky-400 {
+  color: #0284C7 !important;
+  font-weight: 600 !important;
+}
+
+/* 10. Metric Cards Bar in Light Mode */
+html.light #metrics-bar {
+  background-color: #F8FAFC !important;
+  border-color: #E2E8F0 !important;
+}
+
+html.light #metrics-bar .bezel-outer {
+  background: #FFFFFF !important;
+  border: 1px solid #E2E8F0 !important;
+  box-shadow: 0 1px 3px rgba(15, 23, 42, 0.04), 0 6px 16px -2px rgba(15, 23, 42, 0.04) !important;
+}
+
+html.light #metrics-bar .bezel-inner {
+  background: #FFFFFF !important;
+  border-color: rgba(226, 232, 240, 0.7) !important;
+}
+
+html.light #metrics-bar span.text-slate-400 {
+  color: #475569 !important;
+  font-weight: 600 !important;
+}
+
+html.light #metrics-bar p.text-slate-400 {
+  color: #475569 !important;
+}
+
+html.light #metrics-bar .text-\[11px\] {
+  background-color: #F1F5F9 !important;
+  color: #334155 !important;
+  border-color: #CBD5E1 !important;
+  font-weight: 600 !important;
+}
+
+/* 10. Certifications & Links */
 html.light #certifications a.btn-apple {
   background-color: #FFFFFF !important;
-  border-color: #E2E8F0 !important;
+  border: 1px solid #CBD5E1 !important;
+  color: #0F172A !important;
+  box-shadow: 0 1px 3px rgba(15, 23, 42, 0.05) !important;
+}
+
+html.light #certifications a.btn-apple:hover {
+  background-color: #F8FAFC !important;
+  border-color: #0284C7 !important;
+}
+
+html.light #certifications a.btn-apple span,
+html.light #certifications a.btn-apple svg {
   color: #0F172A !important;
 }
 
-html.light #certifications a.btn-apple span {
-  color: #0F172A !important;
+html.light #certifications a[target="_blank"] {
+  color: #0284C7 !important;
+}
+
+/* 11. Contact Footer */
+html.light #contact a.btn-apple:first-child {
+  background-color: #0F172A !important;
+  color: #FFFFFF !important;
+}
+
+html.light #contact a.btn-apple:first-child span,
+html.light #contact a.btn-apple:first-child svg {
+  color: #FFFFFF !important;
+}
+
+html.light #contact a.btn-apple:last-child {
+  background-color: #ECFDF5 !important;
+  border: 1px solid #A7F3D0 !important;
+  color: #065F46 !important;
+}
+
+html.light #contact a.btn-apple:last-child:hover {
+  background-color: #D1FAE5 !important;
 }
 
 /* Fluid Apple Tactile Physics */

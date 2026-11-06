@@ -59,12 +59,12 @@ const skillGroups = [
 
             <div class="grid grid-cols-1 sm:grid-cols-2 gap-3.5">
               {group.skills.map((skill) => (
-                <div class="p-4 rounded-xl bg-white/[0.02] light:bg-slate-50 border border-white/[0.06] light:border-slate-200 hover:border-white/[0.15] transition-colors">
-                  <div class="flex items-center justify-between mb-1.5">
-                    <span class="text-sm font-bold text-slate-100 light:text-slate-900">{skill.name}</span>
-                    <span class="text-[11px] font-semibold text-sky-400 light:text-sky-600">{skill.level}</span>
+                <div class="skill-item-card p-4 rounded-xl bg-white/[0.02] border border-white/[0.06] hover:border-white/[0.15] transition-colors">
+                  <div class="flex items-center justify-between mb-1.5 gap-2">
+                    <span class="skill-item-title text-sm font-bold text-slate-100">{skill.name}</span>
+                    <span class="skill-item-badge text-[11px] font-semibold text-sky-400 whitespace-nowrap">{skill.level}</span>
                   </div>
-                  <p class="text-xs text-slate-400 light:text-slate-600 leading-relaxed">
+                  <p class="skill-item-note text-xs text-slate-400 leading-relaxed font-normal">
                     {skill.note}
                   </p>
                 </div>
