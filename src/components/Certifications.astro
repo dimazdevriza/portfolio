@@ -1,0 +1,117 @@
+---
+const driveArchiveUrl = "https://drive.google.com/drive/folders/1K6PsKpArQAbXgFQS4QruEJD4zFDRoOUo?usp=sharing";
+
+const certifications = [
+  {
+    title: "MikroTik Certified Network Associate (MTCNA)",
+    issuer: "MikroTik",
+    date: "October 2026",
+    credentialId: "Verified by MikroTik",
+    description: "Certified proficiency in routing configurations, packet flows, firewall filtering, NAT rules, bandwidth management, and enterprise network diagnostics.",
+    badgeBg: "bg-amber-500/10",
+    badgeText: "text-amber-400",
+    badgeBorder: "border-amber-500/20",
+  },
+  {
+    title: "Microsoft Azure AI Fundamentals",
+    issuer: "Microsoft",
+    date: "June 2026",
+    credentialId: "Microsoft Certified",
+    description: "Certified understanding of core artificial intelligence workloads, machine learning concepts, computer vision, and conversational AI solutions on Microsoft Azure.",
+    badgeBg: "bg-blue-500/10",
+    badgeText: "text-blue-400",
+    badgeBorder: "border-blue-500/20",
+  },
+  {
+    title: "Altissia CEFR English Assessment",
+    issuer: "Altissia",
+    date: "October 2026",
+    credentialId: "CEFR Standardized",
+    description: "Standardized European language framework evaluation confirming intermediate English communication competence for technical documentation and collaboration.",
+    badgeBg: "bg-sky-500/10",
+    badgeText: "text-sky-400",
+    badgeBorder: "border-sky-500/20",
+  },
+  {
+    title: "Web Developer Competency Certification",
+    issuer: "Universitas PGRI Sumatera Barat",
+    date: "October 2026",
+    credentialId: "Faculty Verified",
+    description: "Formal technical program certifying hands-on competency in web systems development, relational database engineering, and software delivery.",
+    badgeBg: "bg-purple-500/10",
+    badgeText: "text-purple-400",
+    badgeBorder: "border-purple-500/20",
+  },
+];
+---
+
+<section id="certifications" class="py-24 bg-canvas-subtle/40 border-t border-slate-800/80 relative">
+  <div class="max-w-5xl mx-auto px-6">
+    
+    <!-- Section Header with Real Document Link -->
+    <div class="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-16 reveal-on-scroll opacity-0 translate-y-8">
+      <div>
+        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-slate-800/80 border border-slate-700/60 text-xs font-mono text-accent mb-3">
+          <span>VERIFIED CREDENTIALS</span>
+        </div>
+        <h2 class="text-3xl sm:text-4xl font-extrabold tracking-tight text-white mb-2">
+          Certifications & Standards
+        </h2>
+        <p class="text-slate-400 text-sm max-w-xl">
+          Formal credentials in network engineering, cloud artificial intelligence, and software development.
+        </p>
+      </div>
+
+      <!-- Real Google Drive Link to Archive -->
+      <a
+        href={driveArchiveUrl}
+        target="_blank"
+        rel="noopener noreferrer"
+        class="tactile-btn inline-flex items-center gap-2 px-4 py-2.5 rounded-xl bg-slate-800 hover:bg-slate-700 border border-slate-700 text-slate-200 text-xs font-semibold shadow-sm min-h-[44px]"
+      >
+        <svg class="w-4 h-4 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path>
+        </svg>
+        <span>Inspect Verification Archive (Drive)</span>
+      </a>
+    </div>
+
+    <!-- Cards Grid -->
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+      {certifications.map((cert) => (
+        <div class="p-6 rounded-2xl bg-card border border-card-border hover:border-slate-700 transition-all duration-300 reveal-on-scroll opacity-0 translate-y-8 flex flex-col justify-between">
+          <div>
+            <div class="flex items-center justify-between gap-2 mb-3">
+              <span class={`px-2.5 py-0.5 rounded text-[11px] font-mono font-semibold border ${cert.badgeBg} ${cert.badgeText} ${cert.badgeBorder}`}>
+                {cert.issuer}
+              </span>
+              <span class="text-xs font-mono text-slate-500">{cert.date}</span>
+            </div>
+            
+            <h3 class="text-lg font-bold text-white mb-2 tracking-tight">
+              {cert.title}
+            </h3>
+            
+            <p class="text-xs text-slate-400 leading-relaxed mb-4">
+              {cert.description}
+            </p>
+          </div>
+
+          <div class="pt-3 border-t border-slate-800/80 flex items-center justify-between text-[11px] font-mono text-slate-400">
+            <span>{cert.credentialId}</span>
+            <a
+              href={driveArchiveUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              class="text-accent hover:underline inline-flex items-center gap-1"
+            >
+              <span>View Document</span>
+              <span aria-hidden="true">&rarr;</span>
+            </a>
+          </div>
+        </div>
+      ))}
+    </div>
+
+  </div>
+</section>

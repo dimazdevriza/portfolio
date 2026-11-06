@@ -1,0 +1,30 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Hero from '../components/Hero.astro';
+import MetricCards from '../components/MetricCards.astro';
+import CaseStudies from '../components/CaseStudies.astro';
+import SkillsMatrix from '../components/SkillsMatrix.astro';
+import Certifications from '../components/Certifications.astro';
+import ExperienceTimeline from '../components/ExperienceTimeline.astro';
+import ContactFooter from '../components/ContactFooter.astro';
+import '../styles/global.css';
+---
+
+<Layout
+  title="Dimaz Devriza | Full-Stack Web Developer & Network Associate"
+  description="Portfolio of Dimaz Devriza: S1 Information Technology graduate (GPA 3.69), Full-Stack Laravel Developer, MTCNA and Azure AI Certified."
+>
+  <Header />
+  
+  <main id="main-content">
+    <Hero />
+    <MetricCards />
+    <CaseStudies />
+    <SkillsMatrix />
+    <Certifications />
+    <ExperienceTimeline />
+  </main>
+
+  <ContactFooter />
+</Layout>

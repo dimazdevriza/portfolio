@@ -1,0 +1,75 @@
+---
+const skillGroups = [
+  {
+    category: "Full-Stack Development",
+    description: "Production web applications built with clean architecture and reactive UI patterns.",
+    skills: [
+      { name: "Laravel", level: "Primary Framework", note: "Eloquent, Migrations, RBAC, Auth" },
+      { name: "Livewire & Alpine.js", level: "Frontend Reactivity", note: "Real-time state and dynamic DOM" },
+      { name: "PHP", level: "Language", note: "OOP, Strict Types, Backend APIs" },
+      { name: "MySQL", level: "Relational Database", note: "ACID, Indexing, Pessimistic Locking" },
+      { name: "Tailwind CSS", level: "Styling", note: "Component systems, responsive layout" },
+      { name: "REST APIs & JSON", level: "Integration", note: "Clean endpoints and payload contracts" },
+    ],
+  },
+  {
+    category: "Networking & Infrastructure",
+    description: "Certified routing, server configuration, and continuous deployment environments.",
+    skills: [
+      { name: "MikroTik RouterOS", level: "Certified (MTCNA)", note: "Routing, NAT, Firewall, Subnetting" },
+      { name: "Computer Networking", level: "Core Infrastructure", note: "TCP/IP, DNS, Gateway diagnostics" },
+      { name: "Git & Version Control", level: "Workflow", note: "Feature branching, conflict resolution" },
+      { name: "Server Deployment", level: "Production Ops", note: "cPanel, Rumahweb hosting, SSL, DNS" },
+      { name: "Microsoft Azure AI", level: "Certified Foundation", note: "Cloud AI workloads and API usage" },
+      { name: "Software QA & Testing", level: "Quality Standard", note: "Edge cases, validation, bug auditing" },
+    ],
+  },
+];
+---
+
+<section id="skills" class="py-24 relative">
+  <div class="max-w-5xl mx-auto px-6">
+    
+    <div class="mb-16 reveal-on-scroll opacity-0 translate-y-8">
+      <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-slate-800/80 border border-slate-700/60 text-xs font-mono text-accent mb-3">
+        <span>TECHNICAL FOUNDATION</span>
+      </div>
+      <h2 class="text-3xl sm:text-4xl font-extrabold tracking-tight text-white mb-2">
+        Skills & Capabilities
+      </h2>
+      <p class="text-slate-400 text-sm max-w-xl">
+        A grounded balance between full-stack application development and enterprise networking.
+      </p>
+    </div>
+
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+      {skillGroups.map((group) => (
+        <div class="p-6 sm:p-8 rounded-3xl bg-card border border-card-border hover:border-slate-700 transition-all duration-300 reveal-on-scroll opacity-0 translate-y-8">
+          <div class="mb-6">
+            <h3 class="text-xl font-bold text-white mb-1 tracking-tight">
+              {group.category}
+            </h3>
+            <p class="text-xs text-slate-400">
+              {group.description}
+            </p>
+          </div>
+
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+            {group.skills.map((skill) => (
+              <div class="p-3 rounded-xl bg-slate-900/90 border border-slate-800/80 hover:border-slate-700 transition-colors">
+                <div class="flex items-center justify-between mb-1">
+                  <span class="text-xs font-bold text-slate-200">{skill.name}</span>
+                  <span class="text-[10px] font-mono text-accent font-semibold">{skill.level}</span>
+                </div>
+                <p class="text-[11px] text-slate-400 leading-tight">
+                  {skill.note}
+                </p>
+              </div>
+            ))}
+          </div>
+        </div>
+      ))}
+    </div>
+
+  </div>
+</section>
