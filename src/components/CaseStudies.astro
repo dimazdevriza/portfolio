@@ -77,23 +77,16 @@
                 <button
                   type="button"
                   data-tab="flow"
-                  class="arch-tab-btn active px-3 py-1 rounded-lg text-xs font-semibold bg-white/[0.1] text-white transition-all duration-300"
+                  class="arch-tab-btn active px-3.5 py-1.5 rounded-lg text-xs font-semibold bg-white/[0.1] text-white transition-all duration-300"
                 >
                   Alur Transaksi ACID
                 </button>
                 <button
                   type="button"
                   data-tab="concurrency"
-                  class="arch-tab-btn px-3 py-1 rounded-lg text-xs font-medium text-slate-400 hover:text-white hover:bg-white/[0.05] transition-all duration-300"
+                  class="arch-tab-btn px-3.5 py-1.5 rounded-lg text-xs font-medium text-slate-400 hover:text-white hover:bg-white/[0.05] transition-all duration-300"
                 >
                   Solusi Konkurensi
-                </button>
-                <button
-                  type="button"
-                  data-tab="tests"
-                  class="arch-tab-btn px-3 py-1 rounded-lg text-xs font-medium text-slate-400 hover:text-white hover:bg-white/[0.05] transition-all duration-300"
-                >
-                  154 Pengujian Otomatis
                 </button>
               </div>
             </div>
@@ -160,27 +153,6 @@
                     Saat Mandor A memulai alokasi, baris batch dikunci seketika oleh database. Permintaan Mandor B mengantre hingga transaksi Mandor A selesai di-commit. Mandor B kemudian membaca sisa stok baru (2 zak) dan sistem dengan aman menolak permintaan 7 zak.
                   </p>
                   <span class="text-[11px] font-mono text-emerald-400">Hasil: Zero Stok Minus & 100% Data Konsisten</span>
-                </div>
-              </div>
-            </div>
-
-            <!-- Tab Content 3: 154 Automated Tests Summary -->
-            <div id="tab-content-tests" class="arch-tab-content hidden p-6">
-              <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 text-center">
-                <div class="p-4 rounded-xl bg-white/[0.02] border border-white/[0.06]">
-                  <span class="text-3xl font-extrabold text-sky-400 block mb-1">154</span>
-                  <span class="text-xs text-slate-300 font-semibold block mb-0.5">Automated Tests Passed</span>
-                  <span class="text-[11px] text-slate-500">Suite MySQL Terisolasi</span>
-                </div>
-                <div class="p-4 rounded-xl bg-white/[0.02] border border-white/[0.06]">
-                  <span class="text-3xl font-extrabold text-emerald-400 block mb-1">816</span>
-                  <span class="text-xs text-slate-300 font-semibold block mb-0.5">Assertions Terverifikasi</span>
-                  <span class="text-[11px] text-slate-500">Cakupan alur bisnis kritis</span>
-                </div>
-                <div class="p-4 rounded-xl bg-white/[0.02] border border-white/[0.06]">
-                  <span class="text-3xl font-extrabold text-indigo-400 block mb-1">0</span>
-                  <span class="text-xs text-slate-300 font-semibold block mb-0.5">Kegagalan Regresi</span>
-                  <span class="text-[11px] text-slate-500">Pest & PHPUnit Test Harness</span>
                 </div>
               </div>
             </div>
