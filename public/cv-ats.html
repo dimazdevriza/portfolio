@@ -1,0 +1,623 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CV ATS Dimaz Devriza - Full-Stack Web Developer & Network Associate</title>
+  <style>
+    /* Reset & Base Setup */
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+      font-size: 9.5pt;
+      line-height: 1.38;
+      color: #1a202c;
+      background: #f8fafc;
+      -webkit-font-smoothing: antialiased;
+      padding: 24px 0;
+    }
+
+    /* Interactive Toolbar for screen preview only */
+    .screen-toolbar {
+      max-width: 210mm;
+      margin: 0 auto 16px auto;
+      padding: 10px 16px;
+      background: #0f172a;
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      color: #e2e8f0;
+      font-size: 13px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    }
+    .screen-toolbar button {
+      background: #38bdf8;
+      color: #0f172a;
+      border: none;
+      padding: 6px 14px;
+      border-radius: 6px;
+      font-weight: 600;
+      cursor: pointer;
+      font-size: 12px;
+      transition: background 0.2s;
+    }
+    .screen-toolbar button:hover {
+      background: #7dd3fc;
+    }
+    .lang-tabs button {
+      background: transparent;
+      color: #94a3b8;
+      border: 1px solid #334155;
+      padding: 5px 12px;
+      margin-left: 6px;
+    }
+    .lang-tabs button.active {
+      background: #1e293b;
+      color: #f8fafc;
+      border-color: #38bdf8;
+    }
+
+    /* A4 Paper Sheet Simulation */
+    .sheet {
+      max-width: 210mm;
+      min-height: 297mm;
+      margin: 0 auto;
+      background: #ffffff;
+      padding: 11mm 15mm;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+      border-radius: 2px;
+    }
+
+    /* Header styling */
+    .header {
+      text-align: center;
+      margin-bottom: 10px;
+      border-bottom: 2px solid #0f172a;
+      padding-bottom: 8px;
+    }
+    .name {
+      font-size: 19pt;
+      font-weight: 800;
+      letter-spacing: -0.5px;
+      color: #0f172a;
+      text-transform: uppercase;
+      margin-bottom: 2px;
+    }
+    .tagline {
+      font-size: 10.5pt;
+      font-weight: 700;
+      color: #0369a1;
+      margin-bottom: 5px;
+      letter-spacing: 0.2px;
+    }
+    .contacts {
+      font-size: 8.5pt;
+      color: #475569;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 6px 12px;
+    }
+    .contacts a {
+      color: #0369a1;
+      text-decoration: none;
+    }
+    .contacts a:hover {
+      text-decoration: underline;
+    }
+    .contacts span.separator {
+      color: #cbd5e1;
+    }
+
+    /* Section styling */
+    .section {
+      margin-top: 9px;
+      margin-bottom: 2px;
+    }
+    .section-title {
+      font-size: 9.5pt;
+      font-weight: 800;
+      color: #0f172a;
+      text-transform: uppercase;
+      letter-spacing: 0.8px;
+      border-bottom: 1px solid #cbd5e1;
+      padding-bottom: 2px;
+      margin-bottom: 5px;
+    }
+
+    /* Summary paragraph */
+    .summary-text {
+      font-size: 8.8pt;
+      color: #334155;
+      line-height: 1.4;
+      text-align: justify;
+    }
+
+    /* Skills block */
+    .skills-grid {
+      display: flex;
+      flex-direction: column;
+      gap: 3px;
+      font-size: 8.6pt;
+    }
+    .skill-row {
+      display: flex;
+      line-height: 1.35;
+    }
+    .skill-category {
+      font-weight: 700;
+      color: #0f172a;
+      min-width: 175px;
+      flex-shrink: 0;
+    }
+    .skill-list {
+      color: #334155;
+    }
+
+    /* Experience Items */
+    .item {
+      margin-bottom: 6px;
+    }
+    .item:last-child {
+      margin-bottom: 0;
+    }
+    .item-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      margin-bottom: 1px;
+    }
+    .item-title-row {
+      display: flex;
+      align-items: baseline;
+      gap: 6px;
+    }
+    .item-company {
+      font-size: 9.2pt;
+      font-weight: 800;
+      color: #0f172a;
+    }
+    .item-location {
+      font-size: 8.2pt;
+      color: #64748b;
+      font-weight: 500;
+    }
+    .item-date {
+      font-size: 8.2pt;
+      font-weight: 700;
+      color: #0369a1;
+      text-align: right;
+    }
+    .item-role-row {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 2px;
+    }
+    .item-role {
+      font-size: 8.6pt;
+      font-weight: 700;
+      color: #334155;
+      font-style: italic;
+    }
+
+    /* Bullet lists */
+    ul.item-bullets {
+      list-style-type: disc;
+      padding-left: 14px;
+      margin: 0;
+    }
+    ul.item-bullets li {
+      font-size: 8.5pt;
+      color: #334155;
+      line-height: 1.36;
+      margin-bottom: 2.5px;
+      text-align: justify;
+    }
+    ul.item-bullets li:last-child {
+      margin-bottom: 0;
+    }
+    ul.item-bullets strong {
+      color: #0f172a;
+      font-weight: 600;
+    }
+
+    /* Certifications Grid */
+    .cert-list {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 3px 12px;
+      font-size: 8.4pt;
+    }
+    .cert-item {
+      line-height: 1.3;
+    }
+    .cert-title {
+      font-weight: 700;
+      color: #0f172a;
+    }
+    .cert-issuer {
+      color: #64748b;
+      font-weight: 500;
+    }
+
+    /* PRINT RULES: Strict 1-Page A4 Locking */
+    @media print {
+      @page {
+        size: A4 portrait;
+        margin: 10mm 13mm;
+      }
+      body {
+        background: #ffffff !important;
+        padding: 0 !important;
+        font-size: 9pt;
+      }
+      .screen-toolbar {
+        display: none !important;
+      }
+      .sheet {
+        box-shadow: none !important;
+        padding: 0 !important;
+        max-width: 100% !important;
+        min-height: auto !important;
+      }
+      a {
+        text-decoration: none !important;
+        color: #0f172a !important;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Screen Toolbar -->
+  <div class="screen-toolbar">
+    <div>
+      <strong>Dimaz Devriza — ATS Resume Preview</strong> (Standar 1 Halaman A4)
+    </div>
+    <div style="display: flex; align-items: center; gap: 8px;">
+      <div class="lang-tabs">
+        <button id="btn-id" class="active" onclick="switchLang('id')">Bahasa Indonesia</button>
+        <button id="btn-en" onclick="switchLang('en')">English (US)</button>
+      </div>
+      <button onclick="window.print()">🖨️ Cetak / Simpan PDF</button>
+    </div>
+  </div>
+
+  <!-- A4 Sheet Container -->
+  <main class="sheet">
+    
+    <!-- HEADER -->
+    <header class="header">
+      <h1 class="name">Dimaz Devriza</h1>
+      <div class="tagline">Full-Stack Web Developer & Network Associate</div>
+      <div class="contacts">
+        <span>Padang, Sumatera Barat, Indonesia</span>
+        <span class="separator">•</span>
+        <span>+62 896-6080-7317</span>
+        <span class="separator">•</span>
+        <a href="mailto:dimaz.corn@gmail.com">dimaz.corn@gmail.com</a>
+        <span class="separator">•</span>
+        <a href="https://linkedin.com/in/dimazdevriza" target="_blank">linkedin.com/in/dimazdevriza</a>
+        <span class="separator">•</span>
+        <a href="https://github.com/dimazdevriza" target="_blank">github.com/dimazdevriza</a>
+      </div>
+    </header>
+
+    <!-- CONTENT: BAHASA INDONESIA -->
+    <div id="content-id">
+      
+      <!-- RINGKASAN -->
+      <section class="section">
+        <h2 class="section-title">Ringkasan Profesional</h2>
+        <p class="summary-text">
+          Lulusan S1 Teknologi Informasi (IPK 3,69 / Sangat Memuaskan) dan Full-Stack Web Developer dengan spesialisasi ekosistem Laravel, Livewire, Alpine.js, dan MySQL. Berpengalaman merancang, membangun, dan men-deploy sistem produksi komersial terpadu, termasuk Sistem Logistik Multi-Gudang perumahan dan Learning Management System (LMS) aktif di institusi pendidikan. Menguasai integritas transaksi database ACID, kontrol konkurensi (<em>pessimistic locking</em>), pengujian otomatis (<em>150+ automated test suites</em>), serta deployment server berbasis Git. Memegang lisensi internasional <strong>MikroTik MTCNA</strong> dan <strong>Microsoft Azure AI Fundamentals</strong>.
+        </p>
+      </section>
+
+      <!-- PENDIDIKAN -->
+      <section class="section">
+        <h2 class="section-title">Pendidikan</h2>
+        <div class="item">
+          <div class="item-header">
+            <div class="item-title-row">
+              <span class="item-company">Universitas PGRI Sumatera Barat (UPGRISBA)</span>
+              <span class="item-location">— Padang, Sumatera Barat</span>
+            </div>
+            <span class="item-date">2022 – 2026</span>
+          </div>
+          <div class="item-role-row">
+            <span class="item-role">Sarjana Komputer (S.Kom) - S1 Teknologi Informasi</span>
+            <span style="font-size: 8.5pt; font-weight: 700; color: #0369a1;">IPK: 3,69 / 4,00 (Sangat Memuaskan)</span>
+          </div>
+          <p style="font-size: 8.4pt; color: #475569; margin-top: 1px;">
+            Fokus: Rekayasa Perangkat Lunak, Arsitektur Basis Data Relasional, Jaringan Komputer, Dasar AI Cloud
+          </p>
+        </div>
+      </section>
+
+      <!-- KEAHLIAN TEKNIS -->
+      <section class="section">
+        <h2 class="section-title">Keahlian Teknis</h2>
+        <div class="skills-grid">
+          <div class="skill-row">
+            <span class="skill-category">Bahasa & Framework:</span>
+            <span class="skill-list">PHP (OOP, Strict Typing), Laravel 11/10, Livewire 3, Alpine.js, JavaScript (ES6+), HTML5, CSS3</span>
+          </div>
+          <div class="skill-row">
+            <span class="skill-category">Database & Arsitektur:</span>
+            <span class="skill-list">MySQL, Relational Schema Design, Transaksi ACID, Pessimistic Locking (lockForUpdate), RESTful API</span>
+          </div>
+          <div class="skill-row">
+            <span class="skill-category">Jaringan & Cloud:</span>
+            <span class="skill-list">MikroTik RouterOS (MTCNA), Routing, Firewall Filtering, NAT, Bandwidth Queue, TCP/IP, Microsoft Azure AI</span>
+          </div>
+          <div class="skill-row">
+            <span class="skill-category">Tools, QA & Deployment:</span>
+            <span class="skill-list">Git, GitHub, Deployment Server (Rumahweb/cPanel), Software QA (PHPUnit Testing), Tailwind CSS, Spatie RBAC</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- PENGALAMAN REKAYASA SISTEM -->
+      <section class="section">
+        <h2 class="section-title">Pengalaman Kerja & Rekayasa Perangkat Lunak</h2>
+        
+        <!-- D'Royal Village -->
+        <div class="item">
+          <div class="item-header">
+            <div class="item-title-row">
+              <span class="item-company">D'Royal Village (Pengembang Perumahan)</span>
+              <span class="item-location">— Padang, Indonesia</span>
+            </div>
+            <span class="item-date">Januari 2026 – Oktober 2026</span>
+          </div>
+          <div class="item-role-row">
+            <span class="item-role">Web Developer (Proyek Klien Komersial)</span>
+          </div>
+          <ul class="item-bullets">
+            <li>Merancang, membangun, dan men-deploy <strong>Sistem Informasi Logistik & Pengendalian Biaya Proyek</strong> berbasis Laravel 11, Livewire 3, Alpine.js, dan MySQL guna menggantikan pencatatan manual dan spreadsheet Excel.</li>
+            <li>Mengimplementasikan proteksi database <strong>ACID dengan Pessimistic Row Locking (<code>lockForUpdate()</code>)</strong> untuk mengeliminasi <em>race condition</em> dan mutasi stok minus saat terjadi pengajuan material simultan di multi-gudang.</li>
+            <li>Mengembangkan pelacakan inventaris berbasis <strong>batch harga beli riil</strong>, membebankan pemakaian material langsung ke unit rumah spesifik, serta memisahkan beban cluster bersama dan sewa alat berat.</li>
+            <li>Menyusun <strong>154 automated unit & feature test suites (816 assertions)</strong> guna menjamin ketepatan kalkulasi akuntansi material dan menerapkan kontrol akses berbasis peran (RBAC via Spatie).</li>
+          </ul>
+        </div>
+
+        <!-- SMA Negeri 15 Padang -->
+        <div class="item" style="margin-top: 5px;">
+          <div class="item-header">
+            <div class="item-title-row">
+              <span class="item-company">SMA Negeri 15 Padang</span>
+              <span class="item-location">— Padang, Indonesia</span>
+            </div>
+            <span class="item-date">Maret 2026 – Juli 2026</span>
+          </div>
+          <div class="item-role-row">
+            <span class="item-role">Web Developer</span>
+          </div>
+          <ul class="item-bullets">
+            <li>Berkolaborasi dalam tim 2 developer membangun dan meluncurkan platform <strong>Learning Management System (LMS)</strong> berbasis Laravel dan MySQL yang digunakan secara aktif oleh guru dan siswa sekolah.</li>
+            <li>Membangun fitur manajemen materi ajar digital, pengumpulan tugas dengan validasi format berkas, ujian online, serta rekapitulasi presensi dan nilai otomatis.</li>
+            <li>Mengelola kolaborasi kode menggunakan Git secara terstruktur dan mengeksekusi deployment produksi langsung ke hosting Rumahweb.</li>
+          </ul>
+        </div>
+
+        <!-- LLDIKTI X -->
+        <div class="item" style="margin-top: 5px;">
+          <div class="item-header">
+            <div class="item-title-row">
+              <span class="item-company">LLDIKTI Wilayah X (Kemendikbudristek)</span>
+              <span class="item-location">— Padang, Indonesia</span>
+            </div>
+            <span class="item-date">Juni 2025 – Oktober 2025</span>
+          </div>
+          <div class="item-role-row">
+            <span class="item-role">Web Developer Intern</span>
+          </div>
+          <ul class="item-bullets">
+            <li>Memelihara dan mengembangkan modul baru pada <strong>Sistem Informasi Pembookingan Laboratorium (SiLAB)</strong> berbasis PHP dan MySQL.</li>
+            <li>Merancang logika validasi jadwal reservasi fasilitas laboratorium terpadu guna mengeliminasi bentrokan jadwal antar perguruan tinggi.</li>
+            <li>Menyempurnakan alur registrasi pengguna, validasi dokumen administrasi PDF, serta alur persetujuan bertingkat admin.</li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- SERTIFIKASI RESMI -->
+      <section class="section">
+        <h2 class="section-title">Sertifikasi & Lisensi Resmi</h2>
+        <div class="cert-list">
+          <div class="cert-item">
+            <span class="cert-title">• MikroTik Certified Network Associate (MTCNA)</span><br>
+            <span class="cert-issuer">MikroTik — Lisensi Internasional (Okt 2026)</span>
+          </div>
+          <div class="cert-item">
+            <span class="cert-title">• Microsoft Certified: Azure AI Fundamentals</span><br>
+            <span class="cert-issuer">Microsoft — Kredensial AI Cloud Resmi (Jun 2026)</span>
+          </div>
+          <div class="cert-item">
+            <span class="cert-title">• Altissia CEFR Language Assessment</span><br>
+            <span class="cert-issuer">Altissia — Standar CEFR Eropa (Okt 2026)</span>
+          </div>
+          <div class="cert-item">
+            <span class="cert-title">• Sertifikasi Kompetensi Web Developer</span><br>
+            <span class="cert-issuer">Universitas PGRI Sumatera Barat (Okt 2026)</span>
+          </div>
+        </div>
+      </section>
+
+    </div>
+
+    <!-- CONTENT: ENGLISH VERSION (TOGGLED) -->
+    <div id="content-en" style="display: none;">
+      
+      <!-- SUMMARY -->
+      <section class="section">
+        <h2 class="section-title">Professional Summary</h2>
+        <p class="summary-text">
+          Detail-oriented Full-Stack Web Developer and Information Technology Graduate (GPA 3.69 / 4.00) specializing in the Laravel, Livewire, Alpine.js, and MySQL ecosystem. Proven track record architecting and deploying production commercial systems, including a multi-warehouse logistics & housing project cost-control platform and an active school-wide LMS. Proficient in ACID transaction integrity, pessimistic concurrency control (<em>lockForUpdate</em>), automated testing (<em>150+ test suites</em>), and secure Git server deployments. Internationally certified as a <strong>MikroTik Certified Network Associate (MTCNA)</strong> and <strong>Microsoft Certified: Azure AI Fundamentals</strong>.
+        </p>
+      </section>
+
+      <!-- EDUCATION -->
+      <section class="section">
+        <h2 class="section-title">Education</h2>
+        <div class="item">
+          <div class="item-header">
+            <div class="item-title-row">
+              <span class="item-company">Universitas PGRI Sumatera Barat (UPGRISBA)</span>
+              <span class="item-location">— Padang, Indonesia</span>
+            </div>
+            <span class="item-date">2022 – 2026</span>
+          </div>
+          <div class="item-role-row">
+            <span class="item-role">Bachelor of Science in Information Technology (S.Kom)</span>
+            <span style="font-size: 8.5pt; font-weight: 700; color: #0369a1;">GPA: 3.69 / 4.00 (Distinction)</span>
+          </div>
+          <p style="font-size: 8.4pt; color: #475569; margin-top: 1px;">
+            Core: Software Engineering, Relational Database Architecture, Computer Networking, Cloud AI
+          </p>
+        </div>
+      </section>
+
+      <!-- TECHNICAL SKILLS -->
+      <section class="section">
+        <h2 class="section-title">Technical Skills</h2>
+        <div class="skills-grid">
+          <div class="skill-row">
+            <span class="skill-category">Languages & Frameworks:</span>
+            <span class="skill-list">PHP 8+ (OOP, Strict Typing), Laravel 11/10, Livewire 3, Alpine.js, JavaScript (ES6+), HTML5, CSS3</span>
+          </div>
+          <div class="skill-row">
+            <span class="skill-category">Databases & Architecture:</span>
+            <span class="skill-list">MySQL, Relational Schema Design, ACID Transactions, Pessimistic Locking (lockForUpdate), RESTful APIs</span>
+          </div>
+          <div class="skill-row">
+            <span class="skill-category">Networking & Cloud:</span>
+            <span class="skill-list">MikroTik RouterOS (MTCNA), Routing, Firewall Filtering, NAT, Bandwidth Management, TCP/IP, Azure AI</span>
+          </div>
+          <div class="skill-row">
+            <span class="skill-category">Tools, QA & Deployment:</span>
+            <span class="skill-list">Git, GitHub, Server Deployment (cPanel / Rumahweb), Software QA (PHPUnit Testing), Tailwind CSS, Spatie RBAC</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- EXPERIENCE -->
+      <section class="section">
+        <h2 class="section-title">Software Engineering Experience</h2>
+        
+        <!-- D'Royal Village -->
+        <div class="item">
+          <div class="item-header">
+            <div class="item-title-row">
+              <span class="item-company">D'Royal Village (Housing Development Firm)</span>
+              <span class="item-location">— Padang, Indonesia</span>
+            </div>
+            <span class="item-date">Jan 2026 – Oct 2026</span>
+          </div>
+          <div class="item-role-row">
+            <span class="item-role">Web Developer (Commercial Client Project)</span>
+          </div>
+          <ul class="item-bullets">
+            <li>Designed, built, and deployed an integrated <strong>Logistics Information & Project Cost Control System</strong> using Laravel 11, Livewire 3, Alpine.js, and MySQL, replacing manual paperwork and spreadsheets.</li>
+            <li>Implemented <strong>ACID database transactions with pessimistic row locking (<code>lockForUpdate()</code>)</strong>, preventing race conditions and negative inventory balances across concurrent multi-warehouse requests.</li>
+            <li>Engineered an inventory engine tracking material usage against <strong>exact historical purchase batches</strong>, directly allocating expenses to housing units and shared cluster infrastructure.</li>
+            <li>Authored <strong>154 automated unit & feature test suites (816 assertions)</strong>, ensuring robust calculation accuracy and configuring Role-Based Access Control (RBAC via Spatie).</li>
+          </ul>
+        </div>
+
+        <!-- SMA Negeri 15 Padang -->
+        <div class="item" style="margin-top: 5px;">
+          <div class="item-header">
+            <div class="item-title-row">
+              <span class="item-company">SMA Negeri 15 Padang (Public High School)</span>
+              <span class="item-location">— Padang, Indonesia</span>
+            </div>
+            <span class="item-date">Mar 2026 – Jul 2026</span>
+          </div>
+          <div class="item-role-row">
+            <span class="item-role">Web Developer</span>
+          </div>
+          <ul class="item-bullets">
+            <li>Co-engineered and launched an active <strong>Learning Management System (LMS)</strong> adopted school-wide for teachers and students.</li>
+            <li>Built modules for digital courseware distribution, assignment submissions with strict file validation, class discussions, and automated attendance/grade tracking.</li>
+            <li>Maintained collaborative version control with Git and executed production deployment to Rumahweb hosting.</li>
+          </ul>
+        </div>
+
+        <!-- LLDIKTI X -->
+        <div class="item" style="margin-top: 5px;">
+          <div class="item-header">
+            <div class="item-title-row">
+              <span class="item-company">LLDIKTI Region X (Higher Education Service Institution)</span>
+              <span class="item-location">— Padang, Indonesia</span>
+            </div>
+            <span class="item-date">Jun 2025 – Oct 2025</span>
+          </div>
+          <div class="item-role-row">
+            <span class="item-role">Web Developer Intern</span>
+          </div>
+          <ul class="item-bullets">
+            <li>Maintained and developed features for the <strong>Laboratory Booking Information System (SiLAB)</strong> using PHP and MySQL.</li>
+            <li>Formulated scheduling validation logic that eliminated overlapping facility bookings among regional institutions.</li>
+            <li>Streamlined digital application workflows, including secure multi-step admin verification and structured PDF documentation.</li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- CERTIFICATIONS -->
+      <section class="section">
+        <h2 class="section-title">Certifications & Licenses</h2>
+        <div class="cert-list">
+          <div class="cert-item">
+            <span class="cert-title">• MikroTik Certified Network Associate (MTCNA)</span><br>
+            <span class="cert-issuer">MikroTik — International Credential (Oct 2026)</span>
+          </div>
+          <div class="cert-item">
+            <span class="cert-title">• Microsoft Certified: Azure AI Fundamentals</span><br>
+            <span class="cert-issuer">Microsoft — Official Cloud AI Credential (Jun 2026)</span>
+          </div>
+          <div class="cert-item">
+            <span class="cert-title">• Altissia CEFR Language Assessment</span><br>
+            <span class="cert-issuer">Altissia — European CEFR Standard (Oct 2026)</span>
+          </div>
+          <div class="cert-item">
+            <span class="cert-title">• Certified Web Developer</span><br>
+            <span class="cert-issuer">Universitas PGRI Sumatera Barat (Oct 2026)</span>
+          </div>
+        </div>
+      </section>
+
+    </div>
+
+  </main>
+
+  <script>
+    function switchLang(lang) {
+      const contentId = document.getElementById('content-id');
+      const contentEn = document.getElementById('content-en');
+      const btnId = document.getElementById('btn-id');
+      const btnEn = document.getElementById('btn-en');
+
+      if (lang === 'en') {
+        contentId.style.display = 'none';
+        contentEn.style.display = 'block';
+        btnEn.classList.add('active');
+        btnId.classList.remove('active');
+        document.title = "Dimaz Devriza - Full-Stack Web Developer & Network Associate (Resume)";
+      } else {
+        contentEn.style.display = 'none';
+        contentId.style.display = 'block';
+        btnId.classList.add('active');
+        btnEn.classList.remove('active');
+        document.title = "CV ATS Dimaz Devriza - Full-Stack Web Developer & Network Associate";
+      }
+    }
+  </script>
+</body>
+</html>

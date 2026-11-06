@@ -1,0 +1,650 @@
+---
+import '../styles/global.css';
+import fs from 'node:fs';
+import path from 'node:path';
+
+const driveArchiveUrl = "https://drive.google.com/drive/folders/1K6PsKpArQAbXgFQS4QruEJD4zFDRoOUo?usp=sharing";
+
+let photoSrc = "./images/dimaz-devriza.jpg";
+try {
+  const photoBuffer = fs.readFileSync(path.resolve('./public/images/dimaz-devriza.jpg'));
+  photoSrc = `data:image/jpeg;base64,${photoBuffer.toString('base64')}`;
+} catch (e) {
+  // fallback
+}
+
+let imgDroyal = "./images/project-droyal-village.jpg";
+try {
+  const droyalBuffer = fs.readFileSync(path.resolve('./public/images/project-droyal-village.jpg'));
+  imgDroyal = `data:image/jpeg;base64,${droyalBuffer.toString('base64')}`;
+} catch (e) {
+  // fallback
+}
+
+let imgLms = "./images/project-lms-sman15.jpg";
+try {
+  const lmsBuffer = fs.readFileSync(path.resolve('./public/images/project-lms-sman15.jpg'));
+  imgLms = `data:image/jpeg;base64,${lmsBuffer.toString('base64')}`;
+} catch (e) {
+  // fallback
+}
+---
+
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dimaz Devriza | Portfolio Slides (Dark Mode)</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+    <style is:inline>
+      @page {
+        size: A4 landscape;
+        margin: 0;
+      }
+      *, *::before, *::after {
+        box-sizing: border-box;
+      }
+      html, body {
+        margin: 0;
+        padding: 0;
+        background-color: #030712 !important;
+        color: #F8FAFC !important;
+        color-scheme: dark !important;
+        font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+      }
+      .slide-page {
+        width: 297mm;
+        height: 210mm;
+        max-height: 210mm;
+        page-break-after: always;
+        page-break-inside: avoid;
+        overflow: hidden;
+        position: relative;
+        box-sizing: border-box;
+        padding: 10mm 14mm;
+        background-color: #030712;
+        background-image: 
+          radial-gradient(circle 800px at 50% -100px, rgba(56, 189, 248, 0.14), transparent),
+          radial-gradient(circle 600px at 85% 30%, rgba(99, 102, 241, 0.1), transparent);
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+      }
+      .slide-footer-bar {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding-top: 8px;
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+        font-family: 'JetBrains Mono', monospace;
+        font-size: 9pt;
+        color: #94a3b8;
+      }
+      .slide-footer-bar a {
+        color: #38bdf8;
+        text-decoration: none;
+      }
+    </style>
+  </head>
+  <body>
+
+    <!-- ======================================================== -->
+    <!-- SLIDE 1: HERO & IDENTITY + METRIC CARDS                  -->
+    <!-- ======================================================== -->
+    <div class="slide-page">
+      <!-- Top Status Pill -->
+      <div class="flex items-center justify-between pb-2.5 border-b border-white/[0.1]">
+        <div class="inline-flex items-center gap-3 px-4 py-1.5 rounded-full bg-slate-900/90 border border-white/[0.15] text-xs font-semibold text-slate-200">
+          <span class="relative flex h-2.5 w-2.5">
+            <span class="relative inline-flex rounded-full h-2.5 w-2.5 bg-emerald-400 shadow-[0_0_10px_rgba(52,211,153,0.9)]"></span>
+          </span>
+          <span class="tracking-wide">Terbuka untuk Peluang Full-Stack Developer & Network Associate</span>
+        </div>
+        <span class="font-mono text-xs text-sky-400 font-semibold">dimazdevriza.github.io/portfolio</span>
+      </div>
+
+      <!-- Hero Main Flex -->
+      <div class="grid grid-cols-12 gap-8 items-center my-auto">
+        <!-- Left 8 cols: Typography & Metrics -->
+        <div class="col-span-8 flex flex-col justify-center">
+          <h1 class="text-6xl font-black tracking-tight mb-2 leading-none text-white">
+            <span class="shimmer-text">Dimaz Devriza</span>
+          </h1>
+
+          <p class="text-2xl font-bold mb-4 tracking-tight accent-text-glow text-sky-400">
+            Full-Stack Web Developer & Network Associate
+          </p>
+
+          <p class="text-slate-200 text-base leading-relaxed mb-7 font-normal max-w-2xl">
+            Lulusan S1 Teknologi Informasi (UPGRISBA, IPK 3,69) dengan pengalaman merancang, membangun, dan men-deploy aplikasi web menggunakan Laravel, Livewire, Alpine.js, dan MySQL, serta tersertifikasi internasional di bidang jaringan komputer MikroTik.
+          </p>
+
+          <!-- 3 Real Metric Cards (Bigger & More Readable) -->
+          <div class="grid grid-cols-3 gap-4">
+            <div class="bezel-outer">
+              <div class="bezel-inner p-4">
+                <span class="text-xs uppercase font-bold text-sky-400 tracking-wider block mb-1">Akademik S1</span>
+                <div class="text-3xl font-black text-white">3,69 <span class="text-sm font-normal text-slate-300">IPK</span></div>
+                <span class="text-xs text-slate-300 block mt-1 font-medium">UPGRISBA (2026)</span>
+              </div>
+            </div>
+
+            <div class="bezel-outer">
+              <div class="bezel-inner p-4">
+                <span class="text-xs uppercase font-bold text-sky-400 tracking-wider block mb-1">Sertifikasi</span>
+                <div class="text-3xl font-black text-white">2 <span class="text-sm font-normal text-slate-300">Lisensi</span></div>
+                <span class="text-xs text-slate-300 block mt-1 font-medium">MikroTik & Azure AI</span>
+              </div>
+            </div>
+
+            <div class="bezel-outer">
+              <div class="bezel-inner p-4">
+                <span class="text-xs uppercase font-bold text-sky-400 tracking-wider block mb-1">Pengalaman</span>
+                <div class="text-3xl font-black text-white">3 <span class="text-sm font-normal text-slate-300">Proyek Web</span></div>
+                <span class="text-xs text-slate-300 block mt-1 font-medium">Logistik, LMS, SiLAB</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right 4 cols: Photo Card (Double Bezel - Bigger & Crisp) -->
+        <div class="col-span-4 flex justify-center">
+          <div class="bezel-outer w-[270px] shadow-2xl">
+            <div class="bezel-inner p-2.5 relative overflow-hidden">
+              <div class="aspect-[3/4] rounded-xl overflow-hidden bg-slate-950 relative ring-1 ring-white/10">
+                <img
+                  src={photoSrc}
+                  alt="Dimaz Devriza"
+                  class="w-full h-full object-cover object-top"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Slide Footer -->
+      <div class="slide-footer-bar">
+        <span>Dimaz Devriza • Portfolio Presentation Deck</span>
+        <span>Slide 01 / 06</span>
+      </div>
+    </div>
+
+
+    <!-- ======================================================== -->
+    <!-- SLIDE 2: CASE STUDY 01 - D'ROYAL VILLAGE LOGISTICS       -->
+    <!-- ======================================================== -->
+    <div class="slide-page">
+      <!-- Header -->
+      <div class="flex items-center justify-between pb-2.5 border-b border-white/[0.1]">
+        <div>
+          <h2 class="text-3xl font-extrabold text-white tracking-tight">
+            D'Royal Village: Sistem Informasi Logistik
+          </h2>
+          <span class="text-sm text-sky-400 font-semibold">Proyek Klien • Padang, Sumatera Barat</span>
+        </div>
+        <div class="font-mono text-sm text-slate-300 font-medium">
+          Jan 2026 – Okt 2026
+        </div>
+      </div>
+
+      <!-- Main 2-Column Split: Production Screenshot on Left, Features on Right -->
+      <div class="grid grid-cols-12 gap-7 my-auto items-center">
+        <!-- Left 7 cols: Real Production Screenshot in macOS Browser Window -->
+        <div class="col-span-7 flex flex-col gap-3">
+          <div class="rounded-xl border border-white/[0.15] bg-slate-950 overflow-hidden shadow-2xl">
+            <!-- macOS Window Bar -->
+            <div class="px-4 py-2.5 bg-slate-900 border-b border-white/[0.1] flex items-center justify-between text-xs">
+              <div class="flex items-center gap-2">
+                <span class="w-2.5 h-2.5 rounded-full bg-rose-500 inline-block"></span>
+                <span class="w-2.5 h-2.5 rounded-full bg-amber-500 inline-block"></span>
+                <span class="w-2.5 h-2.5 rounded-full bg-emerald-500 inline-block"></span>
+                <span class="ml-2 font-mono text-[11px] text-slate-200 px-2.5 py-0.5 rounded bg-black/50 border border-white/[0.08]">
+                  🔒 droyalvillagelogistik.co.id/dashboard
+                </span>
+              </div>
+              <span class="text-xs font-semibold text-emerald-400 bg-emerald-500/10 px-2.5 py-0.5 rounded border border-emerald-500/20">
+                ● Live Produksi
+              </span>
+            </div>
+
+            <!-- Real Screenshot Image -->
+            <div class="relative w-full aspect-[16/9.6] bg-slate-950 overflow-hidden">
+              <img
+                src={imgDroyal}
+                alt="Dashboard Sistem Logistik D'Royal Village"
+                class="w-full h-full object-cover object-top"
+              />
+            </div>
+          </div>
+        </div>
+
+        <!-- Right 5 cols: Authentic Project Scope & Features (Larger Typography) -->
+        <div class="col-span-5 flex flex-col gap-3">
+          <p class="text-slate-200 text-sm leading-relaxed font-normal">
+            Merancang dan membangun Sistem Informasi Logistik berbasis web untuk menggantikan proses pencatatan operasional manual dan spreadsheet Excel pada developer perumahan D'Royal Village.
+          </p>
+
+          <!-- Feature 1: Multi-Gudang -->
+          <div class="p-3.5 rounded-xl bg-white/[0.03] border border-white/[0.08]">
+            <h4 class="text-sm font-bold text-white mb-1">Pengelolaan Multi-Gudang & Mutasi</h4>
+            <p class="text-xs text-slate-300 leading-relaxed">
+              Mengelola pencatatan stok material masuk, keluar, dan mutasi antar lokasi proyek (Cluster Villagio, Meliora, Villamora) secara terpusat dan real-time.
+            </p>
+          </div>
+
+          <!-- Feature 2: Alokasi Biaya & Alat -->
+          <div class="p-3.5 rounded-xl bg-white/[0.03] border border-white/[0.08]">
+            <h4 class="text-xs font-bold text-white mb-1">Alokasi Biaya Material & Kontrol Alat</h4>
+            <p class="text-xs text-slate-300 leading-relaxed">
+              Mencatat alokasi pemakaian material ke setiap unit rumah serta peminjaman alat kerja lapangan guna memudahkan pemantauan realisasi anggaran proyek.
+            </p>
+          </div>
+
+          <!-- Feature 3: Hak Akses & Ekspor -->
+          <div class="p-3.5 rounded-xl bg-white/[0.03] border border-white/[0.08]">
+            <h4 class="text-xs font-bold text-white mb-1">Manajemen Hak Akses & Ekspor Laporan</h4>
+            <p class="text-xs text-slate-300 leading-relaxed">
+              Pemisahan wewenang pengguna (Admin, Logistik, Mandor, Keuangan) serta modul ekspor rekapitulasi data mutasi ke format Excel dan PDF.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Slide Footer -->
+      <div class="slide-footer-bar">
+        <span>Teknologi: Laravel 13, Livewire, Alpine.js, Tailwind CSS, MySQL • Domain: droyalvillagelogistik.co.id</span>
+        <span>Slide 02 / 06</span>
+      </div>
+    </div>
+
+
+    <!-- ======================================================== -->
+    <!-- SLIDE 3: CASE STUDY 02 - SMAN 15 PADANG LMS              -->
+    <!-- ======================================================== -->
+    <div class="slide-page">
+      <!-- Header -->
+      <div class="flex items-center justify-between pb-2.5 border-b border-white/[0.1]">
+        <div>
+          <h2 class="text-3xl font-extrabold text-white tracking-tight">
+            SMA Negeri 15 Padang: Learning Management System
+          </h2>
+          <span class="text-sm text-sky-400 font-semibold">Proyek Klien • Padang, Sumatera Barat</span>
+        </div>
+        <div class="font-mono text-sm text-slate-300 font-medium">
+          Mar 2026 – Jul 2026
+        </div>
+      </div>
+
+      <!-- Main 2-Column Split: Production Screenshot on Left, Features on Right (Identical to Slide 02) -->
+      <div class="grid grid-cols-12 gap-7 my-auto items-center">
+        <!-- Left 7 cols: Real Production Screenshot in macOS Browser Window -->
+        <div class="col-span-7 flex flex-col gap-3">
+          <div class="rounded-xl border border-white/[0.15] bg-slate-950 overflow-hidden shadow-2xl">
+            <!-- macOS Window Bar -->
+            <div class="px-4 py-2.5 bg-slate-900 border-b border-white/[0.1] flex items-center justify-between text-xs">
+              <div class="flex items-center gap-2">
+                <span class="w-2.5 h-2.5 rounded-full bg-rose-500 inline-block"></span>
+                <span class="w-2.5 h-2.5 rounded-full bg-amber-500 inline-block"></span>
+                <span class="w-2.5 h-2.5 rounded-full bg-emerald-500 inline-block"></span>
+                <span class="ml-2 font-mono text-[11px] text-slate-200 px-2.5 py-0.5 rounded bg-black/50 border border-white/[0.08]">
+                  🔒 pandu15.id/admin/dashboard
+                </span>
+              </div>
+              <span class="text-xs font-semibold text-emerald-400 bg-emerald-500/10 px-2.5 py-0.5 rounded border border-emerald-500/20">
+                ● Live Hosting
+              </span>
+            </div>
+
+            <!-- Real Screenshot Image -->
+            <div class="relative w-full aspect-[16/9.6] bg-slate-950 overflow-hidden">
+              <img
+                src={imgLms}
+                alt="Dashboard Admin LMS SMA Negeri 15 Padang"
+                class="w-full h-full object-cover object-top"
+              />
+            </div>
+          </div>
+        </div>
+
+        <!-- Right 5 cols: Authentic Project Scope & Features (Larger Typography) -->
+        <div class="col-span-5 flex flex-col gap-3">
+          <p class="text-slate-200 text-sm leading-relaxed font-normal">
+            Merancang dan membangun platform Learning Management System (LMS) berbasis Laravel dan MySQL bersama satu rekan pengembang untuk digitalisasi manajemen kegiatan belajar mengajar secara terpadu.
+          </p>
+
+          <!-- Feature 1: Materi & Tugas -->
+          <div class="p-3.5 rounded-xl bg-white/[0.03] border border-white/[0.08]">
+            <h4 class="text-sm font-bold text-white mb-1">Distribusi Materi & Tugas Digital</h4>
+            <p class="text-xs text-slate-300 leading-relaxed">
+              Memfasilitasi guru untuk mengunggah materi ajar interaktif dan mendistribusikan tugas terstruktur dengan tenggat waktu pengumpulan digital secara terorganisir.
+            </p>
+          </div>
+
+          <!-- Feature 2: Nilai & Presensi -->
+          <div class="p-3.5 rounded-xl bg-white/[0.03] border border-white/[0.08]">
+            <h4 class="text-xs font-bold text-white mb-1">Rekapitulasi Nilai & Presensi Akademik</h4>
+            <p class="text-xs text-slate-300 leading-relaxed">
+              Sistem pencatatan evaluasi nilai tugas siswa dan rekapitulasi presensi harian per kelas guna mempermudah pemantauan perkembangan akademik siswa.
+            </p>
+          </div>
+
+          <!-- Feature 3: Kolaborasi & Deployment -->
+          <div class="p-3.5 rounded-xl bg-white/[0.03] border border-white/[0.08]">
+            <h4 class="text-xs font-bold text-white mb-1">Kolaborasi Git & Deployment Server Rumahweb</h4>
+            <p class="text-xs text-slate-300 leading-relaxed">
+              Bekerja secara kolaboratif menggunakan version control Git, pengujian fungsionalitas modul sistem, serta deployment aplikasi ke hosting produksi Rumahweb.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Slide Footer -->
+      <div class="slide-footer-bar">
+        <span>Teknologi: Laravel, PHP, MySQL, Tailwind CSS, Git, Hosting Rumahweb • Domain: pandu15.id</span>
+        <span>Slide 03 / 06</span>
+      </div>
+    </div>
+
+
+    <!-- ======================================================== -->
+    <!-- SLIDE 4: SKILLS MATRIX                                   -->
+    <!-- ======================================================== -->
+    <div class="slide-page">
+      <!-- Header -->
+      <div class="flex items-center justify-between pb-2.5 border-b border-white/[0.1]">
+        <div>
+          <h2 class="text-3xl font-extrabold text-white tracking-tight">
+            Keahlian & Kemampuan Teknis
+          </h2>
+          <span class="text-sm text-sky-400 font-semibold">Fondasi Web Development & Infrastruktur Jaringan</span>
+        </div>
+        <p class="text-slate-300 text-xs font-mono font-medium">Stack Teruji Produksi</p>
+      </div>
+
+      <!-- Skills 2 Col Grid -->
+      <div class="grid grid-cols-2 gap-6 my-auto">
+        <!-- Col 1: Web Dev -->
+        <div class="bezel-outer">
+          <div class="bezel-inner p-5 flex flex-col justify-between h-full">
+            <div class="mb-3">
+              <h3 class="text-lg font-bold text-white mb-1">Pengembangan Web Full-Stack</h3>
+              <p class="text-xs text-slate-300">Pengembangan aplikasi web terstruktur dengan fokus pada reliabilitas dan reaktivitas data.</p>
+            </div>
+
+            <div class="grid grid-cols-2 gap-3">
+              {[
+                { name: "Laravel", level: "Framework Utama", note: "Eloquent ORM, Migrasi, Otorisasi RBAC, Queue" },
+                { name: "Livewire & Alpine.js", level: "UI Reaktif", note: "Interaksi real-time tanpa reload dan dynamic state" },
+                { name: "PHP", level: "Bahasa Inti", note: "Modern OOP, Strict Typing, RESTful Architecture" },
+                { name: "MySQL", level: "Database Relasional", note: "Relasi tabel, transaksi data, optimasi query" },
+                { name: "Tailwind CSS", level: "Styling & UI", note: "Desain sistem responsif, modern, dan mobile-first" },
+                { name: "REST API & JSON", level: "Integrasi Layanan", note: "Desain endpoint bersih dan validasi payload berkas" },
+              ].map(s => (
+                <div class="p-3 rounded-xl bg-white/[0.03] border border-white/[0.08]">
+                  <div class="flex items-center justify-between mb-1">
+                    <span class="text-xs font-bold text-white">{s.name}</span>
+                    <span class="text-[10px] font-mono text-sky-300 font-semibold">{s.level}</span>
+                  </div>
+                  <p class="text-xs text-slate-300 leading-snug">{s.note}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+
+        <!-- Col 2: Network & Infrastructure -->
+        <div class="bezel-outer">
+          <div class="bezel-inner p-5 flex flex-col justify-between h-full">
+            <div class="mb-3">
+              <h3 class="text-lg font-bold text-white mb-1">Jaringan Komputer & Infrastruktur</h3>
+              <p class="text-xs text-slate-300">Sertifikasi routing internasional, konfigurasi server, dan deployment sistem.</p>
+            </div>
+
+            <div class="grid grid-cols-2 gap-3">
+              {[
+                { name: "MikroTik RouterOS", level: "Tersertifikasi MTCNA", note: "Routing, NAT, Firewall Filtering, Bandwidth Queue" },
+                { name: "Jaringan Komputer", level: "Infrastruktur", note: "TCP/IP, Subnetting, DNS, Gateway, Diagnostics" },
+                { name: "Git & Version Control", level: "Alur Kerja", note: "Branching, Conflict Resolution, PR Workflow" },
+                { name: "Deployment Server", level: "Operasional Hosting", note: "cPanel, Hosting Rumahweb, SSL, DNS Records" },
+                { name: "Microsoft Azure AI", level: "Fondasi AI Cloud", note: "Konsep machine learning dan penerapan AI cloud" },
+                { name: "Software QA & Testing", level: "Penjaminan Kualitas", note: "Validasi logika bisnis dan penanganan skenario" },
+              ].map(s => (
+                <div class="p-3 rounded-xl bg-white/[0.03] border border-white/[0.08]">
+                  <div class="flex items-center justify-between mb-1">
+                    <span class="text-xs font-bold text-white">{s.name}</span>
+                    <span class="text-[10px] font-mono text-sky-300 font-semibold">{s.level}</span>
+                  </div>
+                  <p class="text-xs text-slate-300 leading-snug">{s.note}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Slide Footer -->
+      <div class="slide-footer-bar">
+        <span>Dimaz Devriza • Portfolio Presentation Deck</span>
+        <span>Slide 04 / 06</span>
+      </div>
+    </div>
+
+
+    <!-- ======================================================== -->
+    <!-- SLIDE 5: CERTIFICATIONS & CREDENTIALS                    -->
+    <!-- ======================================================== -->
+    <div class="slide-page">
+      <!-- Header -->
+      <div class="flex items-center justify-between pb-2.5 border-b border-white/[0.1]">
+        <div>
+          <h2 class="text-3xl font-extrabold text-white tracking-tight">
+            Sertifikasi & Kredensial Resmi
+          </h2>
+          <span class="text-sm text-sky-400 font-semibold">Lisensi Internasional, Global, dan Sertifikasi Kompetensi</span>
+        </div>
+        <span class="font-mono text-xs text-slate-300 font-medium">4 Kredensial Terverifikasi</span>
+      </div>
+
+      <!-- Main Content: 4 Cards + Bottom "Lihat Semua Sertifikasi" Button -->
+      <div class="my-auto flex flex-col gap-4">
+        <!-- 4 Certifications Cards with DIRECT GOOGLE DRIVE LINKS -->
+        <div class="grid grid-cols-2 gap-5">
+          {[
+            {
+              title: "MikroTik Certified Network Associate (MTCNA)",
+              issuer: "MikroTik",
+              date: "Oktober 2026",
+              badge: "Lisensi Internasional",
+              color: "border-amber-400/40 text-amber-300 bg-amber-500/10",
+              desc: "Sertifikasi resmi kompetensi konfigurasi routing MikroTik RouterOS, alur paket data, firewall filtering, NAT, manajemen bandwidth, dan pemecahan masalah jaringan komputer.",
+              link: "https://drive.google.com/file/d/1hnocDne2kQnfptjgHzOha8ZaE-FcwlPd/view?usp=sharing"
+            },
+            {
+              title: "Microsoft Azure AI Fundamentals",
+              issuer: "Microsoft",
+              date: "Juni 2026",
+              badge: "Sertifikasi Global",
+              color: "border-blue-400/40 text-blue-300 bg-blue-500/10",
+              desc: "Sertifikasi resmi pemahaman konsep dasar kecerdasan buatan, machine learning, computer vision, natural language processing, dan penerapan layanan AI pada ekosistem Microsoft Azure.",
+              link: "https://drive.google.com/file/d/1Xahel5S7n3B_66hHkXSvGgQOVyIHYc0-/view?usp=drive_link"
+            },
+            {
+              title: "Altissia CEFR Language Assessment",
+              issuer: "Altissia",
+              date: "Oktober 2026",
+              badge: "Standar CEFR Eropa (Skor B1)",
+              color: "border-sky-400/40 text-sky-300 bg-sky-500/10",
+              desc: "Evaluasi standar kemampuan bahasa Inggris tingkat menengah untuk kebutuhan kolaborasi teknis, penulisan dokumentasi arsitektur perangkat lunak, dan komunikasi profesional.",
+              link: "https://drive.google.com/file/d/1Qh5TAEA1AFjctBAb0z7zi-Z6xwpTOv8Z/view?usp=drive_link"
+            },
+            {
+              title: "Sertifikasi Kompetensi Web Developer",
+              issuer: "Universitas PGRI Sumatera Barat",
+              date: "Oktober 2026",
+              badge: "Verifikasi Fakultas",
+              color: "border-purple-400/40 text-purple-300 bg-purple-500/10",
+              desc: "Program pelatihan keahlian komputer tingkat fundamental dengan sertifikasi kompetensi Web Developer dalam rekayasa sistem informasi dan pengelolaan basis data.",
+              link: "https://drive.google.com/file/d/1qtR6lkMwQsBofy_AyrIWxKDFvUzUf8pK/view?usp=drive_link"
+            }
+          ].map(c => (
+            <div class="bezel-outer">
+              <div class="bezel-inner p-4 flex flex-col justify-between h-full">
+                <div>
+                  <div class="flex items-center justify-between mb-2">
+                    <span class={`px-3 py-1 rounded-md text-xs font-bold border ${c.color}`}>{c.badge}</span>
+                    <span class="text-xs font-mono text-slate-300 font-semibold">{c.date}</span>
+                  </div>
+                  <h3 class="text-base font-black text-white mb-1">{c.title}</h3>
+                  <span class="text-xs text-sky-400 font-bold block mb-1.5">{c.issuer}</span>
+                  <p class="text-xs text-slate-200 leading-relaxed mb-3 font-normal">{c.desc}</p>
+                </div>
+
+                <!-- Direct Google Drive Certificate Link Button -->
+                <div class="pt-2 border-t border-white/[0.08]">
+                  <a
+                    href={c.link}
+                    target="_blank"
+                    class="inline-flex items-center justify-between w-full px-3.5 py-1.5 rounded-lg bg-sky-500/15 border border-sky-400/40 text-xs font-bold text-sky-300 hover:bg-sky-500/25 transition-colors"
+                  >
+                    <span class="font-mono">Lihat Bukti Sertifikat Asli</span>
+                    <span class="text-sky-400 text-sm font-bold">Buka Drive ↗</span>
+                  </a>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+
+        <!-- Bottom Action Button: Lihat Semua Sertifikasi (Requested by user) -->
+        <div class="flex justify-center">
+          <a
+            href={driveArchiveUrl}
+            target="_blank"
+            class="inline-flex items-center gap-2.5 px-6 py-2 rounded-xl bg-sky-500/15 border border-sky-400/40 text-xs font-bold text-sky-300 hover:bg-sky-500/25 transition-all shadow-md"
+          >
+            <span>Lihat Semua Sertifikasi</span>
+            <span class="text-sky-400 text-sm font-black">↗</span>
+          </a>
+        </div>
+      </div>
+
+      <!-- Slide Footer -->
+      <div class="slide-footer-bar">
+        <span>Dimaz Devriza • Portfolio Presentation Deck</span>
+        <span>Slide 05 / 06</span>
+      </div>
+    </div>
+
+
+    <!-- ======================================================== -->
+    <!-- SLIDE 6: EXPERIENCE TIMELINE & CONTACT FOOTER            -->
+    <!-- ======================================================== -->
+    <div class="slide-page">
+      <!-- Header -->
+      <div class="flex items-center justify-between pb-2.5 border-b border-white/[0.1]">
+        <div>
+          <h2 class="text-3xl font-extrabold text-white tracking-tight">
+            Pengalaman Kerja & Kontak
+          </h2>
+          <span class="text-sm text-sky-400 font-semibold">Jejak Langkah Profesional & Kolaborasi</span>
+        </div>
+        <span class="font-mono text-sm text-slate-300 font-medium">Padang, Sumatera Barat</span>
+      </div>
+
+      <!-- 2 Columns: Timeline on Left, Contact on Right -->
+      <div class="grid grid-cols-12 gap-7 my-auto">
+        <!-- Left 7 cols: Experience Timeline -->
+        <div class="col-span-7 space-y-3.5">
+          {[
+            {
+              role: "Web Developer (Proyek Klien)",
+              company: "D'Royal Village (Real Estate Developer)",
+              period: "Jan 2026 - Okt 2026",
+              summary: "Merancang dan membangun Sistem Informasi Logistik multi-gudang dan alokasi biaya material berbasis Laravel 13, Livewire, Alpine.js, dan MySQL."
+            },
+            {
+              role: "Web Developer (Proyek Klien)",
+              company: "SMA Negeri 15 Padang",
+              period: "Mar 2026 - Jul 2026",
+              summary: "Membangun platform Learning Management System (LMS) bersama rekan pengembang, aktif digunakan guru dan siswa, di-deploy ke hosting Rumahweb via Git."
+            },
+            {
+              role: "Magang Web Developer",
+              company: "LLDIKTI Wilayah 10 (Divisi IT)",
+              period: "Jun 2025 - Okt 2025",
+              summary: "Membantu pemeliharaan dan perbaikan fitur Sistem Informasi Pembookingan Laboratorium (SiLAB) berbasis PHP Native dan MySQL serta validasi berkas digital."
+            }
+          ].map(exp => (
+            <div class="p-3.5 rounded-xl bg-white/[0.03] border border-white/[0.08]">
+              <div class="flex items-center justify-between mb-1">
+                <h4 class="text-base font-extrabold text-white">{exp.role}</h4>
+                <span class="text-xs font-mono text-slate-300 font-semibold">{exp.period}</span>
+              </div>
+              <span class="text-xs font-semibold text-sky-400 block mb-1.5">{exp.company}</span>
+              <p class="text-xs text-slate-200 leading-relaxed font-normal">{exp.summary}</p>
+            </div>
+          ))}
+        </div>
+
+        <!-- Right 5 cols: Contact & Web Portfolio Card -->
+        <div class="col-span-5 flex flex-col justify-between">
+          <div class="bezel-outer h-full">
+            <div class="bezel-inner p-6 flex flex-col justify-between h-full">
+              <div>
+                <span class="text-xs uppercase font-bold text-sky-400 tracking-wider block mb-1.5">Siap Berkolaborasi</span>
+                <h3 class="text-2xl font-black text-white mb-2 leading-tight">Mari Bangun Sistem Nyata Bersama</h3>
+                <p class="text-xs text-slate-300 leading-relaxed mb-6 font-normal">
+                  Terbuka untuk kesempatan bekerja dan berkolaborasi dalam pengembangan aplikasi web, pengelolaan sistem basis data, maupun infrastruktur jaringan komputer.
+                </p>
+
+                <div class="space-y-3 text-xs">
+                  <div class="flex items-center gap-2 text-slate-200">
+                    <span class="font-mono text-sky-400 w-24 font-bold text-xs">EMAIL:</span>
+                    <span class="font-medium">dimaz.corn@gmail.com</span>
+                  </div>
+                  <div class="flex items-center gap-2 text-slate-200">
+                    <span class="font-mono text-sky-400 w-24 font-bold text-xs">WHATSAPP:</span>
+                    <span class="font-medium">0896-6080-7317</span>
+                  </div>
+                  <div class="flex items-center gap-2 text-slate-200">
+                    <span class="font-mono text-sky-400 w-24 font-bold text-xs">GITHUB:</span>
+                    <a href="https://github.com/dimazdevriza" target="_blank" class="text-sky-300 underline font-medium">github.com/dimazdevriza</a>
+                  </div>
+                  <div class="flex items-center gap-2 text-slate-200">
+                    <span class="font-mono text-sky-400 w-24 font-bold text-xs">LINKEDIN:</span>
+                    <a href="https://linkedin.com/in/dimazdevriza" target="_blank" class="text-sky-300 underline font-medium">linkedin.com/in/dimazdevriza</a>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Web Portfolio Link Badge -->
+              <div class="mt-5 p-3.5 rounded-xl bg-sky-500/10 border border-sky-400/30">
+                <span class="text-xs uppercase font-bold text-sky-300 block mb-1">Website Portofolio Online</span>
+                <a href="https://dimazdevriza.github.io/portfolio/" target="_blank" class="text-xs font-mono font-bold text-white hover:text-sky-300 transition-colors flex items-center justify-between">
+                  <span>https://dimazdevriza.github.io/portfolio/</span>
+                  <span class="text-sky-400 text-sm">↗</span>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Slide Footer -->
+      <div class="slide-footer-bar">
+        <span>Dimaz Devriza • Portfolio Presentation Deck</span>
+        <span>Slide 06 / 06</span>
+      </div>
+    </div>
+
+  </body>
+</html>

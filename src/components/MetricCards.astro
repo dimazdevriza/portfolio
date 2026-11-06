@@ -22,7 +22,7 @@ const metrics = [
     gradient: "from-blue-400 to-indigo-500",
   },
   {
-    title: "Sistem Produksi",
+    title: "Pengalaman Proyek",
     target: "3",
     display: "3",
     decimals: 0,
@@ -31,22 +31,12 @@ const metrics = [
     tag: "Klien & Instansi",
     gradient: "from-indigo-400 to-purple-500",
   },
-  {
-    title: "Integritas Basis Data",
-    target: null,
-    display: "ACID",
-    decimals: 0,
-    unit: "Transaksi",
-    subtitle: "Pessimistic locking database untuk mencegah race condition & stok minus",
-    tag: "Data Integrity",
-    gradient: "from-teal-400 to-sky-500",
-  },
 ];
 ---
 
 <section id="metrics-bar" class="py-14 border-y border-white/[0.06] light:border-slate-200 bg-slate-950/40 light:bg-slate-100/50 relative">
   <div class="max-w-6xl mx-auto px-6">
-    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
+    <div class="grid grid-cols-1 sm:grid-cols-3 gap-5">
       {metrics.map((item) => (
         <div class="bezel-outer p-1.5 metric-card opacity-0 translate-y-8">
           <div class="bezel-inner p-5 flex flex-col justify-between h-full hover:border-white/[0.12] transition-colors">
