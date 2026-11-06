@@ -1,40 +1,40 @@
 ---
 const timeline = [
   {
-    period: "Jan 2026 - Oct 2026",
+    period: "Jan 2026 - Okt 2026",
     role: "Web Developer",
     organization: "D'Royal Village",
-    location: "Padang, West Sumatra",
-    type: "Enterprise System",
-    summary: "Built and deployed an integrated logistics and project cost-control web platform for housing developments. Eliminated manual spreadsheets with batch-price stock tracking, unit cost billing, tool loan management, and ACID transaction safety.",
+    location: "Kota Padang, Sumatera Barat",
+    type: "Sistem Enterprise",
+    summary: "Mengambil posisi sebagai software developer untuk perusahaan developer perumahan D'Royal Village dalam pengembangan Sistem Informasi Logistik terpadu dan pengendalian biaya proyek. Berhasil menggantikan operasional manual dan Excel dengan pelacakan stok material berbasis batch harga, pembebanan biaya unit rumah, peminjaman alat kerja, serta proteksi transaksi database ACID.",
     stack: ["Laravel", "Livewire", "Alpine.js", "MySQL", "Tailwind CSS"],
   },
   {
     period: "Mar 2026 - Jul 2026",
     role: "Web Developer",
     organization: "SMA Negeri 15 Padang",
-    location: "Padang, West Sumatra",
-    type: "Education Platform",
-    summary: "Co-developed and deployed a production Learning Management System (LMS) for high school teachers and students. Configured live hosting infrastructure with Git deployment workflows.",
-    stack: ["Laravel", "PHP", "MySQL", "Git", "cPanel Deployment"],
+    location: "Kota Padang, Sumatera Barat",
+    type: "Platform Pendidikan",
+    summary: "Bekerja sebagai Web Developer bersama satu rekan pengembang dalam pengembangan Learning Management System (LMS) untuk SMA Negeri 15 Padang. Sistem ini sukses diciptakan, di-deploy menggunakan Git di hosting Rumahweb, dan digunakan secara aktif oleh pihak sekolah.",
+    stack: ["Laravel", "PHP", "MySQL", "Git", "Hosting Rumahweb"],
   },
   {
-    period: "Jun 2025 - Oct 2025",
+    period: "Jun 2025 - Okt 2025",
     role: "Web Developer Intern",
     organization: "LLDIKTI Wilayah X",
-    location: "Padang, West Sumatra",
-    type: "Government Agency",
-    summary: "Maintained, upgraded, and optimized the SiLAB laboratory booking platform. Enhanced user registration pipelines, document compliance verification, and administrative review workflows.",
-    stack: ["PHP Native", "MySQL", "Bootstrap", "Relational Schema"],
+    location: "Kota Padang, Sumatera Barat",
+    type: "Lembaga Pemerintah",
+    summary: "Melaksanakan magang di Kantor LLDIKTI Wilayah X dengan tugas memelihara, memperbaiki, dan mengembangkan Sistem Informasi Pembookingan Pemakaian Laboratorium (SiLAB). Menyempurnakan pendaftaran pengguna, validasi berkas persyaratan, serta verifikasi pemesanan oleh admin.",
+    stack: ["PHP Native", "MySQL", "Bootstrap", "Database Relasional"],
   },
   {
     period: "2022 - 2026",
-    role: "S1 Teknologi Informasi (GPA 3.69)",
+    role: "S1 Teknologi Informasi (IPK 3,69)",
     organization: "Universitas PGRI Sumatera Barat",
-    location: "Padang, West Sumatra",
-    type: "Academic Degree",
-    summary: "Graduated with honors (IPK 3.69). Completed coursework in software engineering, database design, computer networks, and artificial intelligence fundamentals.",
-    stack: ["Software Engineering", "Computer Networks", "Database Architecture"],
+    location: "Kota Padang, Sumatera Barat",
+    type: "Pendidikan Tinggi",
+    summary: "Lulus dengan predikat sangat memuaskan (IPK 3,69). Mempelajari rekayasa perangkat lunak, arsitektur basis data, jaringan komputer, dan dasar-dasar kecerdasan buatan.",
+    stack: ["Rekayasa Perangkat Lunak", "Jaringan Komputer", "Basis Data"],
   },
 ];
 ---
@@ -44,19 +44,19 @@ const timeline = [
     
     <div class="mb-16 reveal-on-scroll opacity-0 translate-y-8">
       <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-slate-800/80 border border-slate-700/60 text-xs font-mono text-accent mb-3">
-        <span>CAREER & EDUCATION</span>
+        <span>RIWAYAT KARIR & PENDIDIKAN</span>
       </div>
       <h2 class="text-3xl sm:text-4xl font-extrabold tracking-tight text-white mb-2">
-        Work History & Education
+        Pengalaman Kerja & Pendidikan
       </h2>
       <p class="text-slate-400 text-sm max-w-xl">
-        Chronological record of software development roles, internships, and formal university studies.
+        Catatan riwayat kerja profesional, proyek implementasi sistem nyata, dan latar belakang akademik formal.
       </p>
     </div>
 
     <!-- Timeline List -->
     <div class="relative pl-6 sm:pl-8 border-l border-slate-800 space-y-12">
-      {timeline.map((item, idx) => (
+      {timeline.map((item) => (
         <div class="relative reveal-on-scroll opacity-0 translate-y-8">
           <!-- Timeline Marker Point -->
           <div class="absolute -left-[31px] sm:-left-[39px] top-1.5 w-3.5 h-3.5 rounded-full bg-canvas border-2 border-accent" aria-hidden="true"></div>
@@ -70,7 +70,7 @@ const timeline = [
             </div>
 
             <h3 class="text-lg font-bold text-white mb-1">
-              {item.role} <span class="text-slate-400 font-normal">at {item.organization}</span>
+              {item.role} <span class="text-slate-400 font-normal">di {item.organization}</span>
             </h3>
             
             <p class="text-xs font-mono text-slate-500 mb-3">

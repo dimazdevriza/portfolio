@@ -5,17 +5,17 @@ interface Props {
 }
 
 const {
-  title = "Dimaz Devriza | Full-Stack Web Developer",
-  description = "Portfolio of Dimaz Devriza: S1 IT graduate, Full-Stack Laravel Developer, certified in MikroTik MTCNA and Microsoft Azure AI Fundamentals.",
+  title = "Dimaz Devriza | Full-Stack Web Developer & Network Associate",
+  description = "Portofolio Dimaz Devriza: Lulusan S1 Teknologi Informasi (IPK 3,69), Web Developer Full-Stack Laravel, tersertifikasi MikroTik MTCNA dan Microsoft Azure AI Fundamentals.",
 } = Astro.props;
 ---
 
 <!doctype html>
-<html lang="en">
+<html lang="id">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" type="image/svg+xml" href="./favicon.svg" />
     <meta name="generator" content={Astro.generator} />
     <title>{title}</title>
     <meta name="description" content={description} />
@@ -34,18 +34,18 @@ const {
     />
   </head>
   <body class="bg-canvas text-slate-100 min-h-screen font-sans selection:bg-accent selection:text-slate-950">
-    <!-- Skip to main content for screen readers and keyboard users -->
+    <!-- Aksesibilitas: Lewati ke konten utama -->
     <a
       href="#main-content"
       class="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 z-50 px-4 py-2 bg-accent text-slate-950 font-semibold rounded-lg shadow-lg"
     >
-      Skip to main content
+      Lewati ke konten utama
     </a>
 
     <slot />
 
     <script>
-      // Fluid scroll-reveal observer for elements with .reveal-on-scroll
+      // Fluid scroll-reveal observer
       const observerCallback: IntersectionObserverCallback = (entries, observer) => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
