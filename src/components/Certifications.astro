@@ -9,7 +9,7 @@ const certifications = [
     credentialId: "Lisensi Internasional",
     description: "Sertifikasi resmi kompetensi konfigurasi routing MikroTik RouterOS, alur paket data, firewall filtering, NAT, manajemen bandwidth, dan pemecahan masalah jaringan komputer.",
     badgeBg: "bg-amber-500/10",
-    badgeText: "text-amber-300",
+    badgeText: "text-amber-300 light:text-amber-700",
     badgeBorder: "border-amber-500/20",
   },
   {
@@ -19,7 +19,7 @@ const certifications = [
     credentialId: "Sertifikasi Microsoft",
     description: "Sertifikasi resmi pemahaman konsep dasar kecerdasan buatan, machine learning, computer vision, natural language processing, dan penerapan layanan AI pada ekosistem Microsoft Azure.",
     badgeBg: "bg-blue-500/10",
-    badgeText: "text-blue-300",
+    badgeText: "text-blue-300 light:text-blue-700",
     badgeBorder: "border-blue-500/20",
   },
   {
@@ -29,7 +29,7 @@ const certifications = [
     credentialId: "Standar CEFR Eropa",
     description: "Evaluasi standar kemampuan bahasa Inggris tingkat menengah untuk kebutuhan kolaborasi teknis, penulisan dokumentasi arsitektur perangkat lunak, dan komunikasi profesional.",
     badgeBg: "bg-sky-500/10",
-    badgeText: "text-sky-300",
+    badgeText: "text-sky-300 light:text-sky-700",
     badgeBorder: "border-sky-500/20",
   },
   {
@@ -39,25 +39,26 @@ const certifications = [
     credentialId: "Verifikasi Fakultas",
     description: "Program pelatihan keahlian komputer tingkat fundamental dengan sertifikasi kompetensi Web Developer dalam rekayasa sistem informasi dan pengelolaan basis data.",
     badgeBg: "bg-purple-500/10",
-    badgeText: "text-purple-300",
+    badgeText: "text-purple-300 light:text-purple-700",
     badgeBorder: "border-purple-500/20",
   },
 ];
 ---
 
-<section id="certifications" class="py-28 sm:py-36 bg-slate-950/40 border-t border-white/[0.06] relative">
+<section id="certifications" class="py-24 sm:py-32 bg-slate-950/40 light:bg-slate-100/60 border-t border-white/[0.06] light:border-slate-200 relative">
   <div class="max-w-6xl mx-auto px-6">
     
-    <!-- Section Header with Real Document Link -->
-    <div class="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-20 reveal-on-scroll opacity-0 translate-y-8">
+    <!-- Section Header with Real Document Link (R-09 / R-05) -->
+    <div class="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-16 reveal-on-scroll opacity-0 translate-y-8">
       <div>
-        <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/[0.04] border border-white/[0.1] backdrop-blur-md text-xs font-semibold text-sky-400 mb-4 shadow-sm">
-          <span>Kredensial Terverifikasi</span>
+        <div class="flex items-center gap-3 mb-3">
+          <span class="w-8 h-[2px] bg-sky-400" aria-hidden="true"></span>
+          <span class="text-xs uppercase tracking-[0.2em] font-semibold text-sky-400">Verifikasi Resmi</span>
         </div>
-        <h2 class="text-3xl sm:text-5xl font-extrabold tracking-tight text-white mb-4">
+        <h2 class="text-3xl sm:text-5xl font-extrabold tracking-tight text-white light:text-slate-900 mb-4">
           Sertifikasi & Standar Kompetensi
         </h2>
-        <p class="text-slate-300 text-base sm:text-lg max-w-xl font-normal leading-relaxed">
+        <p class="text-slate-300 light:text-slate-700 text-base sm:text-lg max-w-xl font-normal leading-relaxed">
           Dokumen kualifikasi resmi di bidang rekayasa jaringan komputer, kecerdasan buatan cloud, dan pengembangan perangkat lunak.
         </p>
       </div>
@@ -67,11 +68,11 @@ const certifications = [
         href={driveArchiveUrl}
         target="_blank"
         rel="noopener noreferrer"
-        class="btn-apple group inline-flex items-center gap-3 px-5 py-3 rounded-full bg-white/[0.05] hover:bg-white/[0.1] border border-white/[0.12] text-slate-200 text-xs font-semibold backdrop-blur-md shadow-sm min-h-[48px]"
+        class="btn-apple group inline-flex items-center gap-3 px-5 py-3 rounded-full bg-slate-900/60 light:bg-white hover:bg-slate-900/90 light:hover:bg-slate-50 border border-white/[0.12] light:border-slate-300 text-slate-200 light:text-slate-800 text-xs font-semibold shadow-sm min-h-[48px]"
       >
         <span>Buka Arsip Sertifikat (Drive)</span>
-        <div class="w-6 h-6 rounded-full bg-white/10 flex items-center justify-center group-hover:translate-x-0.5 transition-transform" aria-hidden="true">
-          <svg class="w-3.5 h-3.5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <div class="w-6 h-6 rounded-full bg-white/10 light:bg-slate-100 flex items-center justify-center group-hover:translate-x-0.5 transition-transform" aria-hidden="true">
+          <svg class="w-3.5 h-3.5 text-white light:text-slate-900" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path>
           </svg>
         </div>
@@ -85,28 +86,28 @@ const certifications = [
           <div class="bezel-inner p-6 sm:p-8 flex flex-col justify-between h-full">
             <div>
               <div class="flex items-center justify-between gap-2 mb-4">
-                <span class={`px-3 py-1 rounded-full text-xs font-semibold border ${cert.badgeBg} ${cert.badgeText} ${cert.badgeBorder}`}>
+                <span class={`px-2.5 py-1 rounded-md text-xs font-semibold border ${cert.badgeBg} ${cert.badgeText} ${cert.badgeBorder}`}>
                   {cert.issuer}
                 </span>
-                <span class="text-xs font-medium text-slate-400">{cert.date}</span>
+                <span class="text-xs font-medium text-slate-400 light:text-slate-600">{cert.date}</span>
               </div>
               
-              <h3 class="text-xl font-bold text-white mb-2.5 tracking-tight">
+              <h3 class="text-xl font-bold text-white light:text-slate-900 mb-2.5 tracking-tight">
                 {cert.title}
               </h3>
               
-              <p class="text-xs sm:text-sm text-slate-300 leading-relaxed mb-6 font-normal">
+              <p class="text-xs sm:text-sm text-slate-300 light:text-slate-700 leading-relaxed mb-6 font-normal">
                 {cert.description}
               </p>
             </div>
 
-            <div class="pt-4 border-t border-white/[0.06] flex items-center justify-between text-xs text-slate-400">
-              <span class="font-medium text-slate-400">{cert.credentialId}</span>
+            <div class="pt-4 border-t border-white/[0.06] light:border-slate-200 flex items-center justify-between text-xs text-slate-400 light:text-slate-600">
+              <span class="font-medium text-slate-400 light:text-slate-600">{cert.credentialId}</span>
               <a
                 href={driveArchiveUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                class="text-sky-400 hover:text-sky-300 font-semibold inline-flex items-center gap-1.5 transition-colors"
+                class="text-sky-400 light:text-sky-600 hover:text-sky-300 light:hover:text-sky-700 font-semibold inline-flex items-center gap-1.5 transition-colors"
               >
                 <span>Lihat Dokumen</span>
                 <span aria-hidden="true">&rarr;</span>

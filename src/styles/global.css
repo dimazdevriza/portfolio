@@ -5,19 +5,42 @@
 @layer base {
   html {
     scroll-behavior: smooth;
-    background-color: #030712;
-    color: #F8FAFC;
     font-feature-settings: "cv02", "cv03", "cv04", "cv11";
   }
 
-  body {
+  /* Default Dark Mode Theme */
+  html:not(.light) {
+    background-color: #030712;
+    color: #F8FAFC;
+    color-scheme: dark;
+  }
+
+  html:not(.light) body {
     overflow-x: hidden;
     background-color: #030712;
     background-image: 
-      radial-gradient(circle 800px at 50% -100px, rgba(56, 189, 248, 0.14), transparent),
-      radial-gradient(circle 600px at 85% 30%, rgba(99, 102, 241, 0.10), transparent),
-      radial-gradient(circle 600px at 15% 70%, rgba(14, 165, 233, 0.08), transparent);
+      radial-gradient(circle 800px at 50% -100px, rgba(56, 189, 248, 0.12), transparent),
+      radial-gradient(circle 600px at 85% 30%, rgba(99, 102, 241, 0.08), transparent),
+      radial-gradient(circle 600px at 15% 70%, rgba(14, 165, 233, 0.06), transparent);
     background-attachment: fixed;
+  }
+
+  /* Light Mode Theme Base */
+  html.light {
+    background-color: #F8FAFC;
+    color: #0F172A;
+    color-scheme: light;
+  }
+
+  html.light body {
+    overflow-x: hidden;
+    background-color: #F8FAFC;
+    background-image: 
+      radial-gradient(circle 800px at 50% -100px, rgba(14, 165, 233, 0.07), transparent),
+      radial-gradient(circle 600px at 85% 30%, rgba(99, 102, 241, 0.04), transparent),
+      radial-gradient(circle 600px at 15% 70%, rgba(56, 189, 248, 0.03), transparent);
+    background-attachment: fixed;
+    color: #0F172A;
   }
 
   /* R-39: Base pointer for interactive controls */
@@ -44,9 +67,13 @@
   background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
 }
 
-/* High-End Apple Glass Materials */
+.light .film-grain {
+  opacity: 0.012;
+}
+
+/* High-End Apple Glass Materials (Confined to fixed floating elements per R-10) */
 .apple-glass-island {
-  background: rgba(13, 19, 33, 0.82);
+  background: rgba(13, 19, 33, 0.85);
   backdrop-filter: blur(28px) saturate(200%);
   -webkit-backdrop-filter: blur(28px) saturate(200%);
   border: 1px solid rgba(255, 255, 255, 0.14);
@@ -55,45 +82,179 @@
     inset 0 1px 1px 0 rgba(255, 255, 255, 0.2);
 }
 
+.light .apple-glass-island {
+  background: rgba(255, 255, 255, 0.92) !important;
+  border-color: rgba(0, 0, 0, 0.09) !important;
+  box-shadow: 
+    0 15px 40px -10px rgba(0, 0, 0, 0.08),
+    inset 0 1px 1px 0 rgba(255, 255, 255, 0.9) !important;
+}
+
+.light .apple-glass-island a,
+.light .apple-glass-island span {
+  color: #0F172A !important;
+}
+
+.light .apple-glass-island a:hover {
+  background-color: rgba(0, 0, 0, 0.05) !important;
+}
+
 /* Double-Bezel Architecture (Machined hardware look) */
 .bezel-outer {
-  background: rgba(255, 255, 255, 0.035);
-  border: 1px solid rgba(255, 255, 255, 0.09);
-  border-radius: 2rem;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 1.75rem;
   padding: 0.5rem;
   box-shadow: 0 30px 60px -15px rgba(0, 0, 0, 0.85);
-  transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+  transition: border-color 0.4s ease, box-shadow 0.4s ease;
 }
 
 .bezel-outer:hover {
-  border-color: rgba(56, 189, 248, 0.3);
+  border-color: rgba(56, 189, 248, 0.28);
   box-shadow: 
     0 35px 70px -15px rgba(0, 0, 0, 0.95),
-    0 0 45px -10px rgba(56, 189, 248, 0.2);
+    0 0 45px -10px rgba(56, 189, 248, 0.18);
 }
 
 .bezel-inner {
   background: rgba(10, 15, 28, 0.92);
-  border: 1px solid rgba(255, 255, 255, 0.07);
-  border-radius: calc(2rem - 0.5rem);
-  box-shadow: inset 0 1px 1px rgba(255, 255, 255, 0.14);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: calc(1.75rem - 0.5rem);
+  box-shadow: inset 0 1px 1px rgba(255, 255, 255, 0.12);
+}
+
+.light .bezel-outer {
+  background: rgba(0, 0, 0, 0.02) !important;
+  border-color: rgba(0, 0, 0, 0.08) !important;
+  box-shadow: 0 20px 40px -15px rgba(0, 0, 0, 0.06) !important;
+}
+
+.light .bezel-outer:hover {
+  border-color: rgba(2, 132, 199, 0.35) !important;
+  box-shadow: 0 25px 50px -15px rgba(0, 0, 0, 0.1) !important;
+}
+
+.light .bezel-inner {
+  background: #FFFFFF !important;
+  border-color: rgba(0, 0, 0, 0.06) !important;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04) !important;
+}
+
+/* Comprehensive Light Mode Contrast Enforcement (R-25, R-34) */
+html.light h1,
+html.light h2,
+html.light h3,
+html.light h4,
+html.light strong,
+html.light .text-white {
+  color: #0F172A !important;
+}
+
+html.light p,
+html.light .text-slate-200,
+html.light .text-slate-300 {
+  color: #334155 !important; /* Slate 700 - contrast > 8.5:1 */
+}
+
+html.light .text-slate-400 {
+  color: #475569 !important; /* Slate 600 - contrast > 5.5:1 */
+}
+
+html.light .bg-white\/\[0\.02\],
+html.light .bg-white\/\[0\.03\],
+html.light .bg-white\/\[0\.04\],
+html.light .bg-white\/\[0\.05\] {
+  background-color: #F1F5F9 !important;
+  border-color: #E2E8F0 !important;
+}
+
+html.light .border-white\/\[0\.06\],
+html.light .border-white\/\[0\.08\],
+html.light .border-white\/\[0\.1\] {
+  border-color: #E2E8F0 !important;
+}
+
+html.light .bg-slate-950\/40,
+html.light .bg-slate-950\/60,
+html.light .bg-slate-950\/70,
+html.light .bg-slate-950\/85 {
+  background-color: #F8FAFC !important;
+}
+
+html.light #tech-marquee-container {
+  background-color: #F1F5F9 !important;
+  border-color: #E2E8F0 !important;
+}
+
+html.light #tech-marquee-track span {
+  color: #334155 !important;
+}
+
+/* Light mode specific badge, button, and card overrides */
+html.light #hero-status {
+  background-color: #FFFFFF !important;
+  border-color: #E2E8F0 !important;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05) !important;
+}
+
+html.light #hero-status span {
+  color: #1E293B !important;
+}
+
+html.light #card-badge-status,
+html.light #card-badge-metric {
+  background-color: #FFFFFF !important;
+  border-color: #E2E8F0 !important;
+  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.08) !important;
+}
+
+html.light #card-badge-status span {
+  color: #0F172A !important;
+}
+
+html.light #card-badge-metric span {
+  color: #0F172A !important;
+}
+
+html.light #card-badge-metric .text-slate-400 {
+  color: #475569 !important;
+}
+
+html.light #hero-cta a:last-child {
+  background-color: #FFFFFF !important;
+  border-color: #E2E8F0 !important;
+  color: #0F172A !important;
+}
+
+html.light #hero-cta a:last-child span {
+  color: #0F172A !important;
+}
+
+html.light #certifications a.btn-apple {
+  background-color: #FFFFFF !important;
+  border-color: #E2E8F0 !important;
+  color: #0F172A !important;
+}
+
+html.light #certifications a.btn-apple span {
+  color: #0F172A !important;
 }
 
 /* Fluid Apple Tactile Physics */
 .btn-apple {
-  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.3s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .btn-apple:hover {
   transform: translateY(-2px);
-  box-shadow: 0 14px 28px -6px rgba(56, 189, 248, 0.35);
+  box-shadow: 0 14px 28px -6px rgba(56, 189, 248, 0.3);
 }
 
 .btn-apple:active {
   transform: scale(0.96) translateY(0);
 }
 
-/* Luminous Headline Shimmer with animated sheen */
+/* Luminous Headline Shimmer */
 .shimmer-text {
   background: linear-gradient(
     110deg,
@@ -105,16 +266,18 @@
   background-size: 200% 100%;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  animation: shimmer-sweep 7s ease-in-out infinite;
 }
 
-@keyframes shimmer-sweep {
-  0% {
-    background-position: 200% 0;
-  }
-  100% {
-    background-position: -200% 0;
-  }
+.light .shimmer-text {
+  background: linear-gradient(
+    110deg,
+    #0F172A 20%,
+    #0284C7 50%,
+    #0F172A 80%
+  ) !important;
+  background-size: 200% 100% !important;
+  -webkit-background-clip: text !important;
+  -webkit-text-fill-color: transparent !important;
 }
 
 .accent-text-glow {
@@ -123,50 +286,13 @@
   -webkit-text-fill-color: transparent;
 }
 
-/* Perpetual Subtle Floating Animations */
-@keyframes float-gentle {
-  0%, 100% {
-    transform: translateY(0px) rotate(0deg);
-  }
-  50% {
-    transform: translateY(-7px) rotate(0.4deg);
-  }
+.light .accent-text-glow {
+  background: linear-gradient(135deg, #0284C7 0%, #0369A1 100%) !important;
+  -webkit-background-clip: text !important;
+  -webkit-text-fill-color: transparent !important;
 }
 
-@keyframes float-reverse {
-  0%, 100% {
-    transform: translateY(0px) rotate(0deg);
-  }
-  50% {
-    transform: translateY(7px) rotate(-0.4deg);
-  }
-}
-
-.animate-float-gentle {
-  animation: float-gentle 6s ease-in-out infinite;
-}
-
-.animate-float-reverse {
-  animation: float-reverse 7s ease-in-out infinite;
-}
-
-/* Ambient Aura Pulse */
-@keyframes pulse-aura {
-  0%, 100% {
-    opacity: 0.55;
-    transform: scale(1);
-  }
-  50% {
-    opacity: 0.85;
-    transform: scale(1.06);
-  }
-}
-
-.animate-pulse-aura {
-  animation: pulse-aura 5s ease-in-out infinite;
-}
-
-/* Infinite Marquee Animation */
+/* Infinite Marquee Animation with accessible pause */
 @keyframes marquee-scroll {
   0% {
     transform: translateX(0%);
@@ -182,7 +308,8 @@
   animation: marquee-scroll 32s linear infinite;
 }
 
-.animate-marquee:hover {
+.animate-marquee:hover,
+.animate-marquee:focus-within {
   animation-play-state: paused;
 }
 
