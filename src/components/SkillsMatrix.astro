@@ -2,70 +2,72 @@
 const skillGroups = [
   {
     category: "Pengembangan Web Full-Stack",
-    description: "Aplikasi web skala produksi yang dibangun dengan arsitektur bersih dan pola UI reaktif.",
+    description: "Arsitektur web modern skala produksi dengan fokus pada performa, keamanan, dan reaktivitas.",
     skills: [
-      { name: "Laravel", level: "Framework Utama", note: "Eloquent ORM, Migrasi, Otorisasi RBAC, Auth" },
-      { name: "Livewire & Alpine.js", level: "Reaktivitas Frontend", note: "Interaksi real-time tanpa reload dan dynamic DOM" },
-      { name: "PHP", level: "Bahasa Pemrograman", note: "OOP Modern, Strict Typing, RESTful API" },
-      { name: "MySQL", level: "Basis Data Relasional", note: "Transaksi ACID, Indexing, Pessimistic Locking" },
-      { name: "Tailwind CSS", level: "Desain Tampilan", note: "Desain responsif, sistem komponen modern" },
-      { name: "REST API & JSON", level: "Integrasi Layanan", note: "Arsitektur endpoint bersih dan validasi data" },
+      { name: "Laravel", level: "Framework Utama", note: "Eloquent ORM, Migrasi, Otorisasi RBAC, Queue" },
+      { name: "Livewire & Alpine.js", level: "UI Reaktif", note: "Interaksi real-time tanpa reload dan dynamic state" },
+      { name: "PHP", level: "Bahasa Inti", note: "Modern OOP, Strict Typing, RESTful Architecture" },
+      { name: "MySQL", level: "Database Relasional", note: "Transaksi ACID, Indexing, Pessimistic Locking" },
+      { name: "Tailwind CSS", level: "Styling & UI", note: "Desain sistem modern, tampilan mobile-first" },
+      { name: "REST API & JSON", level: "Integrasi Layanan", note: "Desain endpoint bersih dan payload validation" },
     ],
   },
   {
     category: "Jaringan Komputer & Infrastruktur",
-    description: "Konfigurasi routing bersertifikasi internasional, manajemen server, dan deployment sistem.",
+    description: "Sertifikasi routing internasional, konfigurasi server, dan deployment sistem berkelanjutan.",
     skills: [
-      { name: "MikroTik RouterOS", level: "Tersertifikasi (MTCNA)", note: "Routing, NAT, Firewall Filtering, Manajemen Bandwidth" },
-      { name: "Jaringan Komputer", level: "Infrastruktur Inti", note: "TCP/IP, Subnetting, DNS, Gateway, Troubleshooting" },
-      { name: "Git & Version Control", level: "Alur Kolaborasi", note: "Feature branching, manajemen commit, merge workflow" },
-      { name: "Deployment Server", level: "Operasional Hosting", note: "cPanel, Hosting Rumahweb, SSL, Domain & DNS" },
-      { name: "Microsoft Azure AI", level: "Fondasi AI Cloud", note: "Konsep dasar machine learning dan integrasi AI" },
-      { name: "Software QA & Testing", level: "Kualitas Kode", note: "Pemeriksaan bug, validasi edge-cases, verifikasi alur" },
+      { name: "MikroTik RouterOS", level: "Tersertifikasi MTCNA", note: "Routing, NAT, Firewall Filtering, Bandwidth Queue" },
+      { name: "Jaringan Komputer", level: "Infrastruktur", note: "TCP/IP, Subnetting, DNS, Gateway, Diagnostics" },
+      { name: "Git & Version Control", level: "Alur Kerja", note: "Branching, Conflict Resolution, PR Workflow" },
+      { name: "Deployment Server", level: "Operasional Hosting", note: "cPanel, Hosting Rumahweb, SSL, DNS Records" },
+      { name: "Microsoft Azure AI", level: "Fondasi AI Cloud", note: "Konsep machine learning dan penerapan AI modern" },
+      { name: "Software QA & Testing", level: "Penjaminan Kualitas", note: "150+ automated unit & feature testing suites" },
     ],
   },
 ];
 ---
 
-<section id="skills" class="py-24 relative">
-  <div class="max-w-5xl mx-auto px-6">
+<section id="skills" class="py-28 sm:py-36 relative">
+  <div class="max-w-6xl mx-auto px-6">
     
-    <div class="mb-16 reveal-on-scroll opacity-0 translate-y-8">
-      <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-slate-800/80 border border-slate-700/60 text-xs font-mono text-accent mb-3">
-        <span>FONDASI TEKNIS</span>
+    <div class="mb-20 reveal-on-scroll opacity-0 translate-y-8">
+      <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/[0.04] border border-white/[0.1] backdrop-blur-md text-xs font-semibold text-sky-400 mb-4 shadow-sm">
+        <span>Penguasaan Teknologi</span>
       </div>
-      <h2 class="text-3xl sm:text-4xl font-extrabold tracking-tight text-white mb-2">
-        Keahlian & Penguasaan Teknologi
+      <h2 class="text-3xl sm:text-5xl font-extrabold tracking-tight text-white mb-5">
+        Keahlian & Kemampuan Teknis
       </h2>
-      <p class="text-slate-400 text-sm max-w-xl">
-        Kombinasi solid antara pengembangan sistem aplikasi web full-stack dan rekayasa infrastruktur jaringan komputer.
+      <p class="text-slate-300 text-base sm:text-lg max-w-2xl leading-relaxed font-normal">
+        Fondasi menyeluruh yang menggabungkan rekayasa aplikasi web tingkat lanjut dengan sertifikasi jaringan komputer dan infrastruktur cloud.
       </p>
     </div>
 
     <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
       {skillGroups.map((group) => (
-        <div class="p-6 sm:p-8 rounded-3xl bg-card border border-card-border hover:border-slate-700 transition-all duration-300 reveal-on-scroll opacity-0 translate-y-8">
-          <div class="mb-6">
-            <h3 class="text-xl font-bold text-white mb-1 tracking-tight">
-              {group.category}
-            </h3>
-            <p class="text-xs text-slate-400">
-              {group.description}
-            </p>
-          </div>
+        <div class="bezel-outer reveal-on-scroll opacity-0 translate-y-8">
+          <div class="bezel-inner p-6 sm:p-8 h-full flex flex-col justify-between">
+            <div class="mb-6">
+              <h3 class="text-xl sm:text-2xl font-bold text-white mb-2 tracking-tight">
+                {group.category}
+              </h3>
+              <p class="text-xs sm:text-sm text-slate-400 leading-relaxed font-normal">
+                {group.description}
+              </p>
+            </div>
 
-          <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
-            {group.skills.map((skill) => (
-              <div class="p-3 rounded-xl bg-slate-900/90 border border-slate-800/80 hover:border-slate-700 transition-colors">
-                <div class="flex items-center justify-between mb-1">
-                  <span class="text-xs font-bold text-slate-200">{skill.name}</span>
-                  <span class="text-[10px] font-mono text-accent font-semibold">{skill.level}</span>
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-3.5">
+              {group.skills.map((skill) => (
+                <div class="p-4 rounded-2xl bg-white/[0.02] border border-white/[0.06] hover:border-white/[0.15] transition-colors">
+                  <div class="flex items-center justify-between mb-1.5">
+                    <span class="text-sm font-bold text-slate-100">{skill.name}</span>
+                    <span class="text-[11px] font-semibold text-sky-400">{skill.level}</span>
+                  </div>
+                  <p class="text-xs text-slate-400 leading-relaxed">
+                    {skill.note}
+                  </p>
                 </div>
-                <p class="text-[11px] text-slate-400 leading-tight">
-                  {skill.note}
-                </p>
-              </div>
-            ))}
+              ))}
+            </div>
           </div>
         </div>
       ))}

@@ -2,50 +2,57 @@
 const cvUrl = "https://drive.google.com/file/d/1KKT_Tqwmpti5bLdsz5CrOPW236-LqkUC/view?usp=sharing";
 ---
 
-<header class="fixed top-4 inset-x-0 z-50 px-4 pointer-events-none">
-  <div class="max-w-4xl mx-auto glass-dock rounded-full px-4 py-2.5 flex items-center justify-between shadow-glass pointer-events-auto transition-all duration-300">
-    <!-- Brand / Name -->
-    <a href="#" class="flex items-center gap-2.5 group focus:outline-none" aria-label="Dimaz Devriza - Kembali ke atas">
-      <div class="w-8 h-8 rounded-full bg-accent/20 border border-accent/40 flex items-center justify-center font-bold text-accent text-xs group-hover:scale-105 transition-transform">
-        DD
+<header class="fixed top-5 inset-x-0 z-50 px-4 pointer-events-none">
+  <div class="max-w-4xl mx-auto apple-glass-island rounded-full px-5 py-2.5 flex items-center justify-between pointer-events-auto transition-all duration-500 hover:border-white/20">
+    
+    <!-- Brand / Identity -->
+    <a href="#" class="flex items-center gap-3 group focus:outline-none" aria-label="Dimaz Devriza - Halaman Utama">
+      <div class="relative w-8 h-8 rounded-full bg-gradient-to-tr from-sky-500 to-blue-600 p-[1px] shadow-sm group-hover:scale-105 transition-transform">
+        <div class="w-full h-full rounded-full bg-slate-950 flex items-center justify-center font-bold text-sky-400 text-xs">
+          DD
+        </div>
       </div>
-      <span class="font-bold text-sm tracking-tight text-white group-hover:text-accent transition-colors">
-        Dimaz Devriza
-      </span>
+      <div class="flex flex-col">
+        <span class="font-bold text-sm tracking-tight text-white group-hover:text-sky-300 transition-colors">
+          Dimaz Devriza
+        </span>
+      </div>
     </a>
 
     <!-- Desktop Navigation Links -->
-    <nav class="hidden md:flex items-center gap-1 text-xs font-medium text-slate-300" aria-label="Navigasi Utama">
-      <a href="#case-studies" class="px-3 py-1.5 rounded-full hover:text-white hover:bg-white/5 transition-colors">
+    <nav class="hidden md:flex items-center gap-1 text-[13px] font-medium text-slate-300" aria-label="Navigasi Utama">
+      <a href="#projects" class="px-3.5 py-1.5 rounded-full hover:text-white hover:bg-white/10 transition-all duration-300">
         Proyek
       </a>
-      <a href="#skills" class="px-3 py-1.5 rounded-full hover:text-white hover:bg-white/5 transition-colors">
+      <a href="#skills" class="px-3.5 py-1.5 rounded-full hover:text-white hover:bg-white/10 transition-all duration-300">
         Keahlian
       </a>
-      <a href="#certifications" class="px-3 py-1.5 rounded-full hover:text-white hover:bg-white/5 transition-colors">
+      <a href="#certifications" class="px-3.5 py-1.5 rounded-full hover:text-white hover:bg-white/10 transition-all duration-300">
         Sertifikasi
       </a>
-      <a href="#experience" class="px-3 py-1.5 rounded-full hover:text-white hover:bg-white/5 transition-colors">
+      <a href="#experience" class="px-3.5 py-1.5 rounded-full hover:text-white hover:bg-white/10 transition-all duration-300">
         Pengalaman
       </a>
-      <a href="#contact" class="px-3 py-1.5 rounded-full hover:text-white hover:bg-white/5 transition-colors">
+      <a href="#contact" class="px-3.5 py-1.5 rounded-full hover:text-white hover:bg-white/10 transition-all duration-300">
         Kontak
       </a>
     </nav>
 
-    <!-- Action Buttons -->
+    <!-- Action Button: Nested Button-in-Button Architecture -->
     <div class="flex items-center gap-2">
       <a
         href={cvUrl}
         target="_blank"
         rel="noopener noreferrer"
-        class="tactile-btn inline-flex items-center gap-1.5 text-xs font-semibold px-3.5 py-2 rounded-full bg-accent text-slate-950 hover:bg-sky-300 shadow-glow-accent"
-        aria-label="Lihat CV dalam format PDF di Google Drive (buka di tab baru)"
+        class="btn-apple group inline-flex items-center gap-2.5 text-xs font-semibold pl-4 pr-1.5 py-1.5 rounded-full bg-white text-slate-950 hover:bg-sky-100 shadow-md"
+        aria-label="Unduh atau tinjau CV PDF di Google Drive"
       >
-        <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
-        </svg>
-        <span>Lihat CV (PDF)</span>
+        <span>Lihat CV</span>
+        <div class="w-6 h-6 rounded-full bg-slate-900/10 flex items-center justify-center group-hover:translate-x-0.5 transition-transform" aria-hidden="true">
+          <svg class="w-3.5 h-3.5 text-slate-900" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+          </svg>
+        </div>
       </a>
 
       <!-- Mobile Menu Toggle Button (Min 44px tap target) -->
@@ -65,13 +72,13 @@ const cvUrl = "https://drive.google.com/file/d/1KKT_Tqwmpti5bLdsz5CrOPW236-LqkUC
   <!-- Mobile Dropdown Menu -->
   <div
     id="mobile-nav-menu"
-    class="hidden md:hidden max-w-sm mx-auto mt-2 glass-dock rounded-2xl p-4 shadow-2xl flex flex-col gap-2 pointer-events-auto text-sm"
+    class="hidden md:hidden max-w-sm mx-auto mt-3 apple-glass-island rounded-3xl p-5 shadow-2xl flex flex-col gap-2 pointer-events-auto text-sm"
   >
-    <a href="#case-studies" class="mobile-nav-link py-2 px-3 rounded-lg hover:bg-white/5 text-slate-200">Proyek</a>
-    <a href="#skills" class="mobile-nav-link py-2 px-3 rounded-lg hover:bg-white/5 text-slate-200">Keahlian</a>
-    <a href="#certifications" class="mobile-nav-link py-2 px-3 rounded-lg hover:bg-white/5 text-slate-200">Sertifikasi</a>
-    <a href="#experience" class="mobile-nav-link py-2 px-3 rounded-lg hover:bg-white/5 text-slate-200">Pengalaman</a>
-    <a href="#contact" class="mobile-nav-link py-2 px-3 rounded-lg hover:bg-white/5 text-slate-200">Kontak</a>
+    <a href="#projects" class="mobile-nav-link py-2.5 px-4 rounded-xl hover:bg-white/10 text-slate-200 font-medium">Proyek</a>
+    <a href="#skills" class="mobile-nav-link py-2.5 px-4 rounded-xl hover:bg-white/10 text-slate-200 font-medium">Keahlian</a>
+    <a href="#certifications" class="mobile-nav-link py-2.5 px-4 rounded-xl hover:bg-white/10 text-slate-200 font-medium">Sertifikasi</a>
+    <a href="#experience" class="mobile-nav-link py-2.5 px-4 rounded-xl hover:bg-white/10 text-slate-200 font-medium">Pengalaman</a>
+    <a href="#contact" class="mobile-nav-link py-2.5 px-4 rounded-xl hover:bg-white/10 text-slate-200 font-medium">Kontak</a>
   </div>
 </header>
 
